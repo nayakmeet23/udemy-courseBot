@@ -34,7 +34,7 @@ def _set_variables_value(sql_script: str, variables: dict) -> str:
     return sql_script
 
 
-def read_script(filename: str, variables: dict = None) -> list[str]:
+def read_script(filename: str, variables: dict = None) -> str:
     # Open and read the file as a single buffer
     fd = open(filename, "r")
     sql_script = fd.read()

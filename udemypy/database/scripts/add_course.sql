@@ -1,5 +1,4 @@
 INSERT INTO course(
-	id,
 	title,
     link,
     coupon_code,
@@ -11,7 +10,6 @@ INSERT INTO course(
     lang,
     badge)
 VALUES(
-	id_value,
 	title_value,
     link_value,
     coupon_code_value,

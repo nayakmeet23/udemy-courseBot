@@ -1,5 +1,5 @@
 CREATE TABLE course(
-	id INT,
+	id INT AUTO_INCREMENT,
 	title VARCHAR(150) UNIQUE,
     link VARCHAR(150) UNIQUE,
     coupon_code VARCHAR(50),

@@ -1,0 +1,1684 @@
+{
+  "timestamp": "20250709_231145",
+  "summary": {
+    "total_courses_found": 164,
+    "scrapers_used": 3,
+    "total_skipped_courses": 0
+  },
+  "scraper_stats": {
+    "DiscudemyScraper": {
+      "total_found": 30,
+      "skipped_duplicate_link": 0,
+      "skipped_no_coupon": 0,
+      "skipped_invalid_data": 0,
+      "added": 30,
+      "errors": 0,
+      "skipped_duplicate_coupon": 11
+    },
+    "YoFreeSamplesScraper": {
+      "total_found": 173,
+      "skipped_duplicate_link": 0,
+      "skipped_no_coupon": 0,
+      "skipped_invalid_data": 0,
+      "added": 172,
+      "errors": 0,
+      "skipped_duplicate_coupon": 27
+    },
+    "RealDiscountScraper": {
+      "total_found": 0,
+      "skipped_ads": 0,
+      "skipped_non_udemy": 0,
+      "skipped_not_free": 0,
+      "skipped_no_coupon": 0,
+      "skipped_duplicate_coupon": 0,
+      "skipped_expired": 0,
+      "added": 0,
+      "errors": 1,
+      "retries": 0,
+      "timeouts": 0
+    }
+  },
+  "courses": [
+    {
+      "title": "Unlock the Secrets of Polynomials: Command On Algebra inside",
+      "link": "https://www.udemy.com/course/unlock-the-secrets-of-polynomials-command-on-algebra/?couponCode=7205F593D2F5E459FCE6",
+      "coupon_code": "7205F593D2F5E459FCE6",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Perplexity ai for marketing business automation",
+      "link": "https://www.udemy.com/course/perplexity-ai-for-marketing-business-automation/?couponCode=09JULY2025",
+      "coupon_code": "09JULY2025",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Customer success mastery",
+      "link": "https://www.udemy.com/course/customer-success-mastery/?couponCode=FREELEARN",
+      "coupon_code": "FREELEARN",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "From Prompt Engineering to Agent Engineering",
+      "link": "https://www.udemy.com/course/from-prompt-engineering-to-agent-engineering/?couponCode=08JULY2025",
+      "coupon_code": "08JULY2025",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Mastering Software Defined Radio (SDR): GNU Radio and SDR++",
+      "link": "https://www.udemy.com/course/software_defined_radio/?couponCode=OCSALY-ACADEMY",
+      "coupon_code": "OCSALY-ACADEMY",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Como crear una pagina web para una agencia de viajes",
+      "link": "https://www.udemy.com/course/como-crear-una-pagina-web-para-una-agencia-de-viajes/?couponCode=WPTE-GR18",
+      "coupon_code": "WPTE-GR18",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Executive Certificate in Company Direction",
+      "link": "https://www.udemy.com/course/executive-certificate-in-company-direction/?couponCode=1B3184334E1A76B6ADA3",
+      "coupon_code": "1B3184334E1A76B6ADA3",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Essential Adobe Lightroom Course for Photo Editing",
+      "link": "https://www.udemy.com/course/essential-adobe-lightroom-course-for-photo-editing/?couponCode=7CA0FCA82507CC824162",
+      "coupon_code": "7CA0FCA82507CC824162",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "The Complete Manager: Management Skills Guide for Beginners",
+      "link": "https://www.udemy.com/course/the-complete-manager-management-skills-for-all-levels/?couponCode=CBB81D4EA1AEC8AC6FF3",
+      "coupon_code": "CBB81D4EA1AEC8AC6FF3",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Certificate in Agile and SCRUM",
+      "link": "https://www.udemy.com/course/professional-certificate-in-agile-and-scrum/?couponCode=5AE0CBA8A9FD2B101988",
+      "coupon_code": "5AE0CBA8A9FD2B101988",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Complete Microsoft Word Excel PowerPoint Course",
+      "link": "https://www.udemy.com/course/complete-microsoft-word-excel-powerpoint-course/?couponCode=90906638756CB153A5B9",
+      "coupon_code": "90906638756CB153A5B9",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "CapCut Mastery: From Beginner to Pro",
+      "link": "https://www.udemy.com/course/capcut-mastery-from-beginner-to-pro/?couponCode=0425783757847401403D",
+      "coupon_code": "0425783757847401403D",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "100+ JavaScript Coding Practice Test Questions Answers 2025",
+      "link": "https://www.udemy.com/course/javascript-coding-interview-questions-with-solutions/?couponCode=BA376C530DBCF5E721BA",
+      "coupon_code": "BA376C530DBCF5E721BA",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Certificate in SMM Social Media Marketing",
+      "link": "https://www.udemy.com/course/professional-certificate-in-smm-social-media-marketing/?couponCode=DA849B217DD33775D2C0",
+      "coupon_code": "DA849B217DD33775D2C0",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Python Matplotlib Programming with Coding Exercises",
+      "link": "https://www.udemy.com/course/python-matplotlib-programming-with-coding-exercises/?couponCode=90E3B76DA8721F406FDD",
+      "coupon_code": "90E3B76DA8721F406FDD",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Business Ideas Generation & Selection for successful startup",
+      "link": "https://www.udemy.com/course/learn-and-generate-select-right-business-ideas/?couponCode=4EDDC58BB42B55F7F6E1",
+      "coupon_code": "4EDDC58BB42B55F7F6E1",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Rank Your Social Media and Go Viral – Be Social Media Master",
+      "link": "https://www.udemy.com/course/rank-your-social-media-and-go-viral-be-social-media-master/?couponCode=33FA4B1B9A6C9A4E38B2",
+      "coupon_code": "33FA4B1B9A6C9A4E38B2",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Adobe Photoshop CC For Absolute Beginner to Advanced",
+      "link": "https://www.udemy.com/course/adobe-photoshop-cc-for-absolute-beginner-to-advanced/?couponCode=F4525B8561DFDF5888D7",
+      "coupon_code": "F4525B8561DFDF5888D7",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Flawless Writing: English Punctuation for Business Writers",
+      "link": "https://www.udemy.com/course/english-punctuation-simplified/?couponCode=D3AEB661D719064D37C8",
+      "coupon_code": "D3AEB661D719064D37C8",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Finance for Non-Finance Professionals: Anyone Can Learn",
+      "link": "https://www.udemy.com/course/finance-for-non-finance-anyone-can-learn-finance/?couponCode=LEARNFINANCEJULY2025",
+      "coupon_code": "LEARNFINANCEJULY2025",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Public Speaking and Presentation Skills Masterclass",
+      "link": "https://www.udemy.com/course/public-speaking-and-presentation-skills-course/?couponCode=5B5131AF852762DB6574",
+      "coupon_code": "5B5131AF852762DB6574",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Diploma of Microsoft Dynamics 365 CRM Business Architect",
+      "link": "https://www.udemy.com/course/diploma-of-microsoft-dynamics-365-crm-business-architect/?couponCode=6EBAB83670B4E8893BB0",
+      "coupon_code": "6EBAB83670B4E8893BB0",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Complete Python For Absolute Beginners",
+      "link": "https://www.udemy.com/course/complete-python-2023-for-absolute-beginners/?couponCode=0DA0CC5526F6A626A6D1",
+      "coupon_code": "0DA0CC5526F6A626A6D1",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Android very basic app development course with java in hindi",
+      "link": "https://www.udemy.com/course/android-very-basic-app-development-course-with-java-in-hindi/?couponCode=COURSEFOLDER_NET",
+      "coupon_code": "COURSEFOLDER_NET",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "HTML 5 With Quizzes And Python 3 Complete Course",
+      "link": "https://www.udemy.com/course/html-5-with-quizzes-and-python-3-complete-course-2023/?couponCode=E27EE0AF898E71770DC5",
+      "coupon_code": "E27EE0AF898E71770DC5",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Plugins de wordpress para siteground",
+      "link": "https://www.udemy.com/course/plugins-de-wordpress-para-siteground/?couponCode=PLWS-GR39",
+      "coupon_code": "PLWS-GR39",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Ultimate tallyprime with gst step by step guide 2021",
+      "link": "https://www.udemy.com/course/ultimate-tallyprime-with-gst-step-by-step-guide-2021/?couponCode=TALLYJULY09",
+      "coupon_code": "TALLYJULY09",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Media Training for Beginners: Ace Your First News Interviews",
+      "link": "https://www.udemy.com/course/media-training-for-beginners/?couponCode=097A7435DB7111F48484",
+      "coupon_code": "097A7435DB7111F48484",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "How to Generate Marketing Leads with AI",
+      "link": "https://www.udemy.com/course/generate-marketing-leads-with-ai/?couponCode=07JULY2025",
+      "coupon_code": "07JULY2025",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Web Design Course with HTML CSS and WordPress",
+      "link": "https://www.udemy.com/course/web-design-course-with-html-css-and-wordpress/?couponCode=75078B0B2D56F6D2AC58",
+      "coupon_code": "75078B0B2D56F6D2AC58",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Public Relations: Become a Media Star by Pitching with Video",
+      "link": "https://www.udemy.com/course/diy-public-relations-pr-through-youtube-video/?couponCode=87CE5990121E818877E4",
+      "coupon_code": "87CE5990121E818877E4",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "JavaScript And PHP Programming Complete Course",
+      "link": "https://www.udemy.com/course/javascript-and-php-programming-complete-course/?couponCode=B6D168F215A6581881B9",
+      "coupon_code": "B6D168F215A6581881B9",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Adobe Photoshop CC Course With Advance Training",
+      "link": "https://www.udemy.com/course/professional-adobe-photoshop-cc-course-with-advance-training/?couponCode=3B31823089E0D9FD3B21",
+      "coupon_code": "3B31823089E0D9FD3B21",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Executive Certificate in Business Leadership",
+      "link": "https://www.udemy.com/course/executive-certificate-in-business-leadership/?couponCode=FD447A420FC9AD20082A",
+      "coupon_code": "FD447A420FC9AD20082A",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Python Numpy Programming with Coding Exercises",
+      "link": "https://www.udemy.com/course/python-numpy-programming-with-coding-exercises/?couponCode=AE04B35155FD7F004254",
+      "coupon_code": "AE04B35155FD7F004254",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Natural Language Preprocessing Using spaCy",
+      "link": "https://www.udemy.com/course/spacy-with-nlp/?couponCode=96AEFF458CA98D914FC4",
+      "coupon_code": "96AEFF458CA98D914FC4",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Time Management Accelerator: Turbocharge Your Productivity",
+      "link": "https://www.udemy.com/course/introduction-to-time-management-p/?couponCode=43E545ADF5C019EAF291",
+      "coupon_code": "43E545ADF5C019EAF291",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Genai cybersecurity solutions j",
+      "link": "https://www.udemy.com/course/genai-cybersecurity-solutions-j/?couponCode=73AB79B0FB61791A2413",
+      "coupon_code": "73AB79B0FB61791A2413",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "SAT Digital English Prep Course | Reading, Writing, Language",
+      "link": "https://www.udemy.com/course/sat-digital-english-prep-course-reading-writing-language/?couponCode=CBEFAC1B63484FE7E6C5",
+      "coupon_code": "CBEFAC1B63484FE7E6C5",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Media Training for Democratic Candidates: You Can Win",
+      "link": "https://www.udemy.com/course/democratic-candidate-communications-training/?couponCode=9683465D05A9C7E56AF8",
+      "coupon_code": "9683465D05A9C7E56AF8",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Fundraising: Ask and Raise Contributions for Your Charity",
+      "link": "https://www.udemy.com/course/fundraising-ask-and-raise-contributions-for-your-charity/?couponCode=6CC1CF8366E3A38E139B",
+      "coupon_code": "6CC1CF8366E3A38E139B",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "JavaScript From Scratch ( Part 1 – Beginner Level)",
+      "link": "https://www.udemy.com/course/javascript-from-scratch-beginner-level/?couponCode=AFC3DF70854DC917E1CC",
+      "coupon_code": "AFC3DF70854DC917E1CC",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Web Design Course for Beginners to Intermediate",
+      "link": "https://www.udemy.com/course/web-development-beginners-to-advanced/?couponCode=4923AD04C4422498EB66",
+      "coupon_code": "4923AD04C4422498EB66",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Essential Microsoft Excel from Beginner to Advance level",
+      "link": "https://www.udemy.com/course/essential-excel-for-beginner-to-advanced/?couponCode=67CF947BC229781D977D",
+      "coupon_code": "67CF947BC229781D977D",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Master in Solution Architecture",
+      "link": "https://www.udemy.com/course/master-in-solution-architecture/?couponCode=DD42F1F4E5A8B928A9F0",
+      "coupon_code": "DD42F1F4E5A8B928A9F0",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Master in Data Science to become a Data Scientist",
+      "link": "https://www.udemy.com/course/a-complete-roadmap-to-become-a-successful-data-scientist/?couponCode=F83EA27DD4B00A787965",
+      "coupon_code": "F83EA27DD4B00A787965",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "GRE Quantitative Prep | Master Math Course | 2025 Updated",
+      "link": "https://www.udemy.com/course/gre-quantitative-master-course/?couponCode=F173C28481DA25C9FD09",
+      "coupon_code": "F173C28481DA25C9FD09",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Master BI, SSIS, SSRS, SSAS & MDX – Zero to Hero",
+      "link": "https://www.udemy.com/course/master-bi-ssis-ssrs-ssas-mdx-zero-to-hero-2024/?couponCode=382531C9346A3447520C",
+      "coupon_code": "382531C9346A3447520C",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "AI for Product Management & Innovation",
+      "link": "https://www.udemy.com/course/ai-for-product-management-innovation/?couponCode=68A72DD483132187C925",
+      "coupon_code": "68A72DD483132187C925",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Pre-Algebra Made Easy: The Complete Beginner’s Guide",
+      "link": "https://www.udemy.com/course/pre-algebra-made-easy-the-complete-beginners-guide/?couponCode=7AA7FA961A4F413F7393",
+      "coupon_code": "7AA7FA961A4F413F7393",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "SAT Digital | Math Master Course | 2025 Updated | Target 800",
+      "link": "https://www.udemy.com/course/sat-i-quantitative-master-course/?couponCode=7F27306EFEC5EC97D3EF",
+      "coupon_code": "7F27306EFEC5EC97D3EF",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Product development customer experience management diploma",
+      "link": "https://www.udemy.com/course/product-development-customer-experience-management-diploma/?couponCode=8AC0988F0E9116EF4A6E",
+      "coupon_code": "8AC0988F0E9116EF4A6E",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Online Course Creation: Teach an Online Course",
+      "link": "https://www.udemy.com/course/how-to-teach-an-online-course2/?couponCode=23E218C82D6D51385C7B",
+      "coupon_code": "23E218C82D6D51385C7B",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Certificate in Procurement and Purchasing",
+      "link": "https://www.udemy.com/course/professional-certificate-in-procurement-and-purchasing/?couponCode=AEE746D92E1B302EEA96",
+      "coupon_code": "AEE746D92E1B302EEA96",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "The Complete JavaScript Course: From Zero to Expert",
+      "link": "https://www.udemy.com/course/the-complete-javascript-course-from-zero-to-expert-o/?couponCode=0F3CBD4E3A1948FB81AA",
+      "coupon_code": "0F3CBD4E3A1948FB81AA",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Salary Negotiation – How to Ask for and Receive a Pay Raise",
+      "link": "https://www.udemy.com/course/how-to-ask-for-a-raise2/?couponCode=004EE6E9EA3DDA61E901",
+      "coupon_code": "004EE6E9EA3DDA61E901",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Google Sheets Bootcamp Boost Productivity Expert in Cloud",
+      "link": "https://www.udemy.com/course/google-sheets-bootcamp-boost-productivity-and-efficiency/?couponCode=90CBE296A6A959FCB3EA",
+      "coupon_code": "90CBE296A6A959FCB3EA",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "SAFe (Scaled Agile Framework) Overview",
+      "link": "https://www.udemy.com/course/safe-scaled-agile-framework/?couponCode=FE0151FF497F45E12770",
+      "coupon_code": "FE0151FF497F45E12770",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Complete Pandas for Absolute Beginners",
+      "link": "https://www.udemy.com/course/complete-pandas-for-absolute-beginners/?couponCode=52C872B4DC2432678A35",
+      "coupon_code": "52C872B4DC2432678A35",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Public Speaking: You Can be a Great Speaker within 24 Hours",
+      "link": "https://www.udemy.com/course/the-ultimate-public-speaking-course/?couponCode=75CA8CA5B2714F180FB8",
+      "coupon_code": "75CA8CA5B2714F180FB8",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Public Speaking for Women",
+      "link": "https://www.udemy.com/course/public-speaking-for-women/?couponCode=5DCA1D43A17D07494E88",
+      "coupon_code": "5DCA1D43A17D07494E88",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Essential Excel With Tips Trick Shortcuts and Job Success",
+      "link": "https://www.udemy.com/course/essential-excel-with-tips-trick-shortcuts-and-job-success/?couponCode=BE0BB56E5CB59CF08A5D",
+      "coupon_code": "BE0BB56E5CB59CF08A5D",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Diploma in WEB3 NFT and NFT Smart Contracts",
+      "link": "https://www.udemy.com/course/professional-diploma-in-web3-nft-and-nft-smart-contracts/?couponCode=5389146181720B68CCE9",
+      "coupon_code": "5389146181720B68CCE9",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Executive Diploma in Human Resources Strategy",
+      "link": "https://www.udemy.com/course/executive-diploma-in-human-resources-strategy/?couponCode=32A378599E2C5C75E556",
+      "coupon_code": "32A378599E2C5C75E556",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Certificate in Marketing and Advertising",
+      "link": "https://www.udemy.com/course/professional-certificate-in-marketing-and-advertising/?couponCode=FC117030A593B4301984",
+      "coupon_code": "FC117030A593B4301984",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Linux Modules",
+      "link": "https://www.udemy.com/course/linux-modules/?couponCode=INFUSION",
+      "coupon_code": "INFUSION",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Design & Develop Unique Customer Value / Selling Proposition",
+      "link": "https://www.udemy.com/course/learn-develop-winning-value-proposition-for-your-business/?couponCode=2FD33B40C251066EBCBE",
+      "coupon_code": "2FD33B40C251066EBCBE",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Advanced Program in Product Development and Management",
+      "link": "https://www.udemy.com/course/mini-mba-in-product-development-and-management/?couponCode=0FF98257A4D3DFAEAAF4",
+      "coupon_code": "0FF98257A4D3DFAEAAF4",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Learn Filmora Video Editing Masterclass From Beginner to Pro",
+      "link": "https://www.udemy.com/course/learn-filmora-video-editing-masterclass-from-beginner-to-pro/?couponCode=952C7EAB2FA16AEBE9B0",
+      "coupon_code": "952C7EAB2FA16AEBE9B0",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "ISO/IEC 27701: Implement Privacy Management Step by Step",
+      "link": "https://www.udemy.com/course/implement-isoiec-27701-step-by-step/?couponCode=9D740381DBA77D3BB62D",
+      "coupon_code": "9D740381DBA77D3BB62D",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Ultimate Guide to Creating Presentations with PowerPoint",
+      "link": "https://www.udemy.com/course/ultimate-guide-to-creating-presentations-with-powerpoint/?couponCode=82CDE53488DDD8403AEB",
+      "coupon_code": "82CDE53488DDD8403AEB",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Diploma in digital transformation and operational excellence",
+      "link": "https://www.udemy.com/course/diploma-in-digital-transformation-and-operational-excellence/?couponCode=F2B6FE302BBBDEED7B38",
+      "coupon_code": "F2B6FE302BBBDEED7B38",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Unlock Fluent English: Master Idioms for Rapid Communication",
+      "link": "https://www.udemy.com/course/english-idioms-course-to-speak-fluently/?couponCode=LEARNENGLISH",
+      "coupon_code": "LEARNENGLISH",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Cursor Vibe Coding Pro: Build Any App from Scratch with AI",
+      "link": "https://www.udemy.com/course/cursor-ai-build-apps/?couponCode=4ED6300D8F24202DD532",
+      "coupon_code": "4ED6300D8F24202DD532",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Ultimate Job Seeker Course – Resume, Cover Letter, Interview",
+      "link": "https://www.udemy.com/course/ultimate-job-seeker-course-resume-cover-letter-interview/?couponCode=15CF29F2B98FB290DF3B",
+      "coupon_code": "15CF29F2B98FB290DF3B",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Executive Certificate in Sales Management",
+      "link": "https://www.udemy.com/course/executive-certificate-in-sales-management/?couponCode=3D855F491A1DA4B29C15",
+      "coupon_code": "3D855F491A1DA4B29C15",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Number Theory (Unvisited applications in the Real World)",
+      "link": "https://www.udemy.com/course/number-theory-unvisited-applications-in-the-real-world/?couponCode=576C31A48AC4FD1E7355",
+      "coupon_code": "576C31A48AC4FD1E7355",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Entrepreneurship and Business Research in Biomedical",
+      "link": "https://www.udemy.com/course/entrepreneurship-and-business-research-in-biomedical/?couponCode=E94A1B36F80C96C79AEE",
+      "coupon_code": "E94A1B36F80C96C79AEE",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Social Media Graphics Design and Video Editing in Canva",
+      "link": "https://www.udemy.com/course/social-media-graphics-design-and-video-editing-in-canva/?couponCode=620A473EB71E093369D9",
+      "coupon_code": "620A473EB71E093369D9",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Finance and  Investment Mastery course 2025 Build wealth",
+      "link": "https://www.udemy.com/course/9-to-5-wealth-creation-blueprint-to-become-financialy-free/?couponCode=FREEWEALTH",
+      "coupon_code": "FREEWEALTH",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Certificate of Agile and Scrum Business Analyst",
+      "link": "https://www.udemy.com/course/professional-certificate-of-agile-and-scrum-business-analyst/?couponCode=93BB5C7B159FD8FD8D37",
+      "coupon_code": "93BB5C7B159FD8FD8D37",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Certificate in Marketing & Marketing Management",
+      "link": "https://www.udemy.com/course/professional-certificate-in-marketing-and-marketing-management/?couponCode=43139C98A50971462A25",
+      "coupon_code": "43139C98A50971462A25",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Executive Certificate in Business Management",
+      "link": "https://www.udemy.com/course/executive-certificate-in-business-management/?couponCode=FDDB3BDA37B8BBE784E4",
+      "coupon_code": "FDDB3BDA37B8BBE784E4",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Python Scipy Programming with Coding Exercises",
+      "link": "https://www.udemy.com/course/python-scipy-programming-with-coding-exercises/?couponCode=D8D3ACBA6CF59B7FC170",
+      "coupon_code": "D8D3ACBA6CF59B7FC170",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Body Language: Appear Confident and Poised When You Speak",
+      "link": "https://www.udemy.com/course/body-language-for-speakers/?couponCode=FE1391B8D2C56B711B1E",
+      "coupon_code": "FE1391B8D2C56B711B1E",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Python for beginners demonstration course",
+      "link": "https://www.udemy.com/course/python-for-beginners-demonstration-course/?couponCode=5CFF2315904A404F6B6B",
+      "coupon_code": "5CFF2315904A404F6B6B",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Advance MS Excel VBA for Beginner to Advanced",
+      "link": "https://www.udemy.com/course/advance-ms-excel-vba-for-beginner-to-advanced/?couponCode=6684EDB872857398A80F",
+      "coupon_code": "6684EDB872857398A80F",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Como crear una pagina web para google adsense",
+      "link": "https://www.udemy.com/course/como-crear-una-pagina-web-para-google-adsense/?couponCode=GOOGLEA-GR21",
+      "coupon_code": "GOOGLEA-GR21",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Python Programming Mastery: From Beginner to Pro",
+      "link": "https://www.udemy.com/course/python-programming-mastery-from-beginner-to-pro/?couponCode=FC08D3073A49948017B5",
+      "coupon_code": "FC08D3073A49948017B5",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Adobe Premiere Pro CC For Video Editing – Novice to Expert",
+      "link": "https://www.udemy.com/course/adobe-premiere-pro-cc-for-video-editing-from-novice-to-exper/?couponCode=4F68C9812489A382DA60",
+      "coupon_code": "4F68C9812489A382DA60",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Python PyGame | Game Development with Coding Exercises",
+      "link": "https://www.udemy.com/course/python-pygame-game-development-with-coding-exercises/?couponCode=F6D27397F06062300D83",
+      "coupon_code": "F6D27397F06062300D83",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Android apps with artificial Intelligence",
+      "link": "https://www.udemy.com/course/building-ai-android-applications/?couponCode=87E67A941D9FD2198E2E",
+      "coupon_code": "87E67A941D9FD2198E2E",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Numpy For Data Science – Real Time Experience",
+      "link": "https://www.udemy.com/course/python-numpy-exercises/?couponCode=NUMPY_FREE_JULY4",
+      "coupon_code": "NUMPY_FREE_JULY4",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Dart Mastery – Become a Dart Master From Zero to Hero",
+      "link": "https://www.udemy.com/course/dart-mastery-become-a-dart-master-from-hero-to-zero-dart/?couponCode=2BC0B0426F998FE90974",
+      "coupon_code": "2BC0B0426F998FE90974",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Public Relations: Crisis Communications Oil and Gas Industry",
+      "link": "https://www.udemy.com/course/crisis-communications-training-for-oil-and-gas-executives/?couponCode=DE7DA3DCF0984B1BB75A",
+      "coupon_code": "DE7DA3DCF0984B1BB75A",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Scrum Master Certification",
+      "link": "https://www.udemy.com/course/advanced-certified-scrum-master/?couponCode=FCF5A6FCDFEC4CF4E2AF",
+      "coupon_code": "FCF5A6FCDFEC4CF4E2AF",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Certificate in Office Administration Management",
+      "link": "https://www.udemy.com/course/professional-certificate-in-office-administration-management/?couponCode=6BB4552EB2EB8AABB8EF",
+      "coupon_code": "6BB4552EB2EB8AABB8EF",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "CSS, Bootstrap And JavaScript And Python Stack Course",
+      "link": "https://www.udemy.com/course/css-bootstrap-and-javascript-and-python-stack-course/?couponCode=B4999F0E5F232584CF5A",
+      "coupon_code": "B4999F0E5F232584CF5A",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Master in Agile HR (Human Resources Management- HRM)",
+      "link": "https://www.udemy.com/course/master-in-agile-hr-human-resources-management/?couponCode=5371C8FEFA6BDB705056",
+      "coupon_code": "5371C8FEFA6BDB705056",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Web Design for Beginners: Build Websites in HTML & CSS",
+      "link": "https://www.udemy.com/course/web-design-for-beginners-build-websites-in-html-css-2021/?couponCode=HTMLCSSCOURSE98",
+      "coupon_code": "HTMLCSSCOURSE98",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Finance and Accounting Fundamentals for non finance students",
+      "link": "https://www.udemy.com/course/finance-and-accounting-fundamentals/?couponCode=B878903A944AA710B19B",
+      "coupon_code": "B878903A944AA710B19B",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Complete CapCut Pro Desktop and Mobile Mastery Course",
+      "link": "https://www.udemy.com/course/complete-capcut-desktop-mastery-course/?couponCode=31742CFF95BD9156245B",
+      "coupon_code": "31742CFF95BD9156245B",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Build a Backend REST API with Node JS from Scratch",
+      "link": "https://www.udemy.com/course/build-backend-api-node-js-and-react-frontend/?couponCode=4915A6743BFB9A5200E3",
+      "coupon_code": "4915A6743BFB9A5200E3",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Salesforce Fundamentals : A Complete Guide for Beginners",
+      "link": "https://www.udemy.com/course/salesforce-fundamentals-a-complete-guide-for-beginners/?couponCode=43E3150B8A3C4E608804",
+      "coupon_code": "43E3150B8A3C4E608804",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Kotler’s Strategic Marketing Management Case Examples",
+      "link": "https://www.udemy.com/course/solve-cases-questions-from-kotlers-marketing-management/?couponCode=B25DF88851C4BF997300",
+      "coupon_code": "B25DF88851C4BF997300",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Media Training: You Can Be a Media Trainer",
+      "link": "https://www.udemy.com/course/media-trainer-how-to-become-a-media-trainer/?couponCode=8E47355E773F0401E3BB",
+      "coupon_code": "8E47355E773F0401E3BB",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Crea un marketplace multi vendedor con wordpress y dokan",
+      "link": "https://www.udemy.com/course/crea-un-marketplace-multi-vendedor-con-wordpress-y-dokan/?couponCode=DOKAN-GR32",
+      "coupon_code": "DOKAN-GR32",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Enhance Lightroom Editing with the Luminar Neo Plugin",
+      "link": "https://www.udemy.com/course/enhance-lightroom-editing-with-the-luminar-neo-plugin/?couponCode=04JULY2025",
+      "coupon_code": "04JULY2025",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Master in Software Architecture, Engineering and Development",
+      "link": "https://www.udemy.com/course/software-development-engineering-excellence-master-course/?couponCode=B0E97AB8F1921F56073D",
+      "coupon_code": "B0E97AB8F1921F56073D",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Media Training: Looking Good on TV- Preparing for the Camera",
+      "link": "https://www.udemy.com/course/looking-good-on-tv-how-to-prepare-for-the-video-camera/?couponCode=354BD2E527511E46C821",
+      "coupon_code": "354BD2E527511E46C821",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Mastering Google Docs: A Comprehensive Google Docs Course",
+      "link": "https://www.udemy.com/course/the-complete-google-docs-course/?couponCode=8A5CD654C3C08441D5B1",
+      "coupon_code": "8A5CD654C3C08441D5B1",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Certificate in Public Relations and Communication Management",
+      "link": "https://www.udemy.com/course/certificate-in-public-relations-and-communication-management/?couponCode=E12BBFCFFC18BD6C72E6",
+      "coupon_code": "E12BBFCFFC18BD6C72E6",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Personal Finance Course : Planning, Investing & Management",
+      "link": "https://www.udemy.com/course/practical-approach-to-investing-personal-finances/?couponCode=5FF41D06C01CFFE8F5B2",
+      "coupon_code": "5FF41D06C01CFFE8F5B2",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Media Training Public Speaking Training for Candidates",
+      "link": "https://www.udemy.com/course/political-candidate-media-and-public-speaking-training/?couponCode=B951ABE0F0019BFCF454",
+      "coupon_code": "B951ABE0F0019BFCF454",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "The Power of One: Mastering the Single Element To Success",
+      "link": "https://www.udemy.com/course/how-to-accelerate-your-business-benefits/?couponCode=REVIEWPLEASE",
+      "coupon_code": "REVIEWPLEASE",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Senior Executive Business Management and Leadership Program",
+      "link": "https://www.udemy.com/course/senior-executive-business-management-and-leadership-program/?couponCode=2A91B9B1166A8E8EE872",
+      "coupon_code": "2A91B9B1166A8E8EE872",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Presentations with ChatGPT",
+      "link": "https://www.udemy.com/course/presentations-with-chatgpt/?couponCode=65FD131299F302D10675",
+      "coupon_code": "65FD131299F302D10675",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Master in Integrated Operations & Supply Chain Management",
+      "link": "https://www.udemy.com/course/master-in-operations-supply-chain-management-moscm-course/?couponCode=F7BFAF83D618DEDCC447",
+      "coupon_code": "F7BFAF83D618DEDCC447",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "HTML5 CSS3 JavaScript Bootstrap & jQuery Masterclass 5 in 1",
+      "link": "https://www.udemy.com/course/html5-css3-javascript-bootstrap-and-jquery-masterclass/?couponCode=8138F8FDFC4839E176B4",
+      "coupon_code": "8138F8FDFC4839E176B4",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Diploma in M&A Business Mergers & Acquisitions",
+      "link": "https://www.udemy.com/course/professional-diploma-in-ma-business-mergers-acquisitions/?couponCode=1276AC4D9E1C5AEEA6B7",
+      "coupon_code": "1276AC4D9E1C5AEEA6B7",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Python Scikit learn Programming with Coding Exercises",
+      "link": "https://www.udemy.com/course/python-scikit-learn-programming-with-coding-exercises/?couponCode=FD2FAEEAA67052B1F0B1",
+      "coupon_code": "FD2FAEEAA67052B1F0B1",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Python Development and Python Programming Fundamentals",
+      "link": "https://www.udemy.com/course/python-development-and-python-programming-fundamentals/?couponCode=0107257E60A77DCC68D3",
+      "coupon_code": "0107257E60A77DCC68D3",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Chief Executive Officer (CEO) Program",
+      "link": "https://www.udemy.com/course/ceo-chief-executive-officer-program/?couponCode=37A68419483EC84D942B",
+      "coupon_code": "37A68419483EC84D942B",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Certificate: Product Management and Development",
+      "link": "https://www.udemy.com/course/professional-certificate-product-management-and-development/?couponCode=348DA2C254C824648C2E",
+      "coupon_code": "348DA2C254C824648C2E",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Python Pytorch Programming with Coding Exercises",
+      "link": "https://www.udemy.com/course/python-pytorch-programming-with-coding-exercises/?couponCode=0826631DA3FEE8ACCF87",
+      "coupon_code": "0826631DA3FEE8ACCF87",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Elementor ecommerce hosting crea una tienda online con wordpress",
+      "link": "https://www.udemy.com/course/elementor-ecommerce-hosting-crea-una-tienda-online-con-wordpress/?couponCode=ELECO-GR32",
+      "coupon_code": "ELECO-GR32",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Financial services basics of regulation compliance",
+      "link": "https://www.udemy.com/course/financial-services-basics-of-regulation-compliance/?couponCode=7_JUL_25",
+      "coupon_code": "7_JUL_25",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Human resources expert employee relations and engagement",
+      "link": "https://www.udemy.com/course/human-resources-expert-employee-relations-and-engagement/?couponCode=12283E786352636965BC",
+      "coupon_code": "12283E786352636965BC",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "GPHR ⭑ The Global Professional in Human Resources HRCI 2025",
+      "link": "https://www.udemy.com/course/gphr-the-global-professional-in-human-resources-by-hrci/?couponCode=MIKESELFJULY",
+      "coupon_code": "MIKESELFJULY",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Python Keras Programming with Coding Exercises",
+      "link": "https://www.udemy.com/course/python-keras-programming-with-coding-exercises/?couponCode=D2C63268ABE716057CF7",
+      "coupon_code": "D2C63268ABE716057CF7",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Certificate in Financial Analysis",
+      "link": "https://www.udemy.com/course/professional-certificate-in-financial-analysis/?couponCode=9B77A1BB9949CBF53954",
+      "coupon_code": "9B77A1BB9949CBF53954",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "The Complete Google Sheets Course – Google Spreadsheet Tips",
+      "link": "https://www.udemy.com/course/the-complete-google-sheets-course-google-spreadsheet-tips/?couponCode=B5C0DE8A2D4942A976F1",
+      "coupon_code": "B5C0DE8A2D4942A976F1",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Career Change: Become a Paid Expert in What You Love",
+      "link": "https://www.udemy.com/course/how-to-be-an-expert2/?couponCode=A3658437839688CA5A79",
+      "coupon_code": "A3658437839688CA5A79",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Master in Sales and Sales Team Management",
+      "link": "https://www.udemy.com/course/excellence-in-sales-management/?couponCode=163048D7C91A9C74218F",
+      "coupon_code": "163048D7C91A9C74218F",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "WordPress Elementor Course: Develop Site Without Coding",
+      "link": "https://www.udemy.com/course/wordpress-elementor-course-develop-site-without-coding/?couponCode=9622B76311B334F6FC20",
+      "coupon_code": "9622B76311B334F6FC20",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Como hacer anuncios efectivos en tiktok ads",
+      "link": "https://www.udemy.com/course/como-hacer-anuncios-efectivos-en-tiktok-ads/?couponCode=TIKTOK-GR24",
+      "coupon_code": "TIKTOK-GR24",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Research Methodologies in Strategy and Product Development",
+      "link": "https://www.udemy.com/course/research-methodologies-in-strategy-and-product-development/?couponCode=5EB5EBAC8C48BAC697FF",
+      "coupon_code": "5EB5EBAC8C48BAC697FF",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "GO GLOBAL WITH YOUR LIFE PURPOSE",
+      "link": "https://www.udemy.com/course/go-global-with-your-life-purpose/?couponCode=43CE2B6E9D5CB13214F0",
+      "coupon_code": "43CE2B6E9D5CB13214F0",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Generative ai and artificial intelligence ai for leaders",
+      "link": "https://www.udemy.com/course/generative-ai-and-artificial-intelligence-ai-for-leaders/?couponCode=5D55637A89593F8D557B",
+      "coupon_code": "5D55637A89593F8D557B",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "GMAT Focus | Quantitative| Master Math Course | 2025 Updated",
+      "link": "https://www.udemy.com/course/gmat-quantitative-master-course/?couponCode=FC8E6E454D4D020DAC72",
+      "coupon_code": "FC8E6E454D4D020DAC72",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Python Machine Learning: From Beginner to Pro",
+      "link": "https://www.udemy.com/course/python-machine-learning-from-beginner-to-pro/?couponCode=68059117D46D061DDAAB",
+      "coupon_code": "68059117D46D061DDAAB",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "ChatGPT for Product Management",
+      "link": "https://www.udemy.com/course/chatgpt-for-product-managers/?couponCode=525AFD91521A0CC414B2",
+      "coupon_code": "525AFD91521A0CC414B2",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Master in New Business Development and Entrepreneurship",
+      "link": "https://www.udemy.com/course/master-in-new-business-development-and-entrepreneurship/?couponCode=90426CCEE3B71E9A3B9A",
+      "coupon_code": "90426CCEE3B71E9A3B9A",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Diploma in Aviation, Airlines, Air Transportation & Airports",
+      "link": "https://www.udemy.com/course/professional-diploma-in-aviation-airlines-air-transportation-airports/?couponCode=AC54DE2E52741EB63700",
+      "coupon_code": "AC54DE2E52741EB63700",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "AWS Essentials: A Complete Beginner’s Guide",
+      "link": "https://www.udemy.com/course/aws-essentials-a-complete-beginners-guide/?couponCode=5BC3EDA70709E6A3EBE9",
+      "coupon_code": "5BC3EDA70709E6A3EBE9",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "The Beginner’s Guide to Adobe Premiere Pro: Edit Like a Pro",
+      "link": "https://www.udemy.com/course/the-beginners-guide-to-adobe-premiere-pro-edit-like-a-pro/?couponCode=783CFC439F9688EA0C3F",
+      "coupon_code": "783CFC439F9688EA0C3F",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "C++ Complete Training Course for C++ Beginners All In One",
+      "link": "https://www.udemy.com/course/c-complete-training-course-for-beginners-2022/?couponCode=F21AE73AA6B9F3BE929E",
+      "coupon_code": "F21AE73AA6B9F3BE929E",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Mastering HTML5: From Beginner to Advanced 2025",
+      "link": "https://www.udemy.com/course/mastering-html5-from-beginner-to-advanced/?couponCode=B9496B56809D60DAD95A",
+      "coupon_code": "B9496B56809D60DAD95A",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Media Training for Print/Online Interviews-Get Great Quotes",
+      "link": "https://www.udemy.com/course/media-training-for-print-interviews-and-online-publications/?couponCode=B8BAAA946914F897728A",
+      "coupon_code": "B8BAAA946914F897728A",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Diploma of Real Estate Business Expert",
+      "link": "https://www.udemy.com/course/professional-diploma-of-real-estate-business-expert/?couponCode=19BD2F3C99AE7B69CA59",
+      "coupon_code": "19BD2F3C99AE7B69CA59",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Implementation of Occupational Health and Safety in Industry",
+      "link": "https://www.udemy.com/course/implementation-of-occupational-health-and-safety-in-industry/?couponCode=6D5830217986A8BE0A25",
+      "coupon_code": "6D5830217986A8BE0A25",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Ultimate Freelancing Course From Beginner to  Expert Success",
+      "link": "https://www.udemy.com/course/ultimate-freelancing-course-from-beginner-to-expert-success/?couponCode=7DEBB15AAB82EACCCA41",
+      "coupon_code": "7DEBB15AAB82EACCCA41",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Essential Photoshop Course for Beginner To Advanced",
+      "link": "https://www.udemy.com/course/graphics-design-videoediting-course/?couponCode=367EBDAC8C59DB7C3A37",
+      "coupon_code": "367EBDAC8C59DB7C3A37",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Fundamental Equity, Share & Stocks  Analysis to Build Wealth",
+      "link": "https://www.udemy.com/course/a-practical-approach-to-fundamental-equity-analysis/?couponCode=D3FF29B2E30117350FD3",
+      "coupon_code": "D3FF29B2E30117350FD3",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Becoming an e commerce platform master certification course",
+      "link": "https://www.udemy.com/course/becoming-an-e-commerce-platform-master-certification-course/?couponCode=3D570F9A8D2BB94E8E64",
+      "coupon_code": "3D570F9A8D2BB94E8E64",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Leading Across Generations / Multigenerational Leadership",
+      "link": "https://www.udemy.com/course/leading-across-generations-multigenerational-leadership/?couponCode=C5402DC05B8069F5DF55",
+      "coupon_code": "C5402DC05B8069F5DF55",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Rewrite Your Reality: 10x Your Writing Skills Effortlessly",
+      "link": "https://www.udemy.com/course/rewrite-your-reality-10x-your-writing-skills-effortlessly/?couponCode=BCF4EBE7D5D5DF7295A1",
+      "coupon_code": "BCF4EBE7D5D5DF7295A1",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "GRE – GMAT | Advanced Learners | Math Marathon",
+      "link": "https://www.udemy.com/course/gre-gmat-advanced-learners-math-marathon/?couponCode=B1305206168461F38118",
+      "coupon_code": "B1305206168461F38118",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Decision Making for Leaders and Managers",
+      "link": "https://www.udemy.com/course/decision-making-for-leaders-and-managers/?couponCode=2A74FCC6806E6317D738",
+      "coupon_code": "2A74FCC6806E6317D738",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Portfolio Management With Templates",
+      "link": "https://www.udemy.com/course/portfolio-management-with-templates/?couponCode=97CC0E6FB52C24569300",
+      "coupon_code": "97CC0E6FB52C24569300",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Web Design Course For Beginner to Advanced",
+      "link": "https://www.udemy.com/course/web-design-for-beginner-to-advanced/?couponCode=E72F9A62A4F3B276A4D9",
+      "coupon_code": "E72F9A62A4F3B276A4D9",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Javascript 10 projects in 10 days course for beginners w",
+      "link": "https://www.udemy.com/course/javascript-10-projects-in-10-days-course-for-beginners-w/?couponCode=6D35AAEC7263CB5ECD65",
+      "coupon_code": "6D35AAEC7263CB5ECD65",
+      "date_found": "2025-07-09 23:11:30",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Microsoft DP-203 Certified: Azure Data Engineer Associate",
+      "link": "https://www.udemy.com/course/microsoft-dp-203-certified-azure-data-engineer-associate/?couponCode=7326B65E4A619AC6F42E",
+      "coupon_code": "7326B65E4A619AC6F42E",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    },
+    {
+      "title": "Professional Certificate in Career Coaching",
+      "link": "https://www.udemy.com/course/professional-certificate-in-career-coaching/?couponCode=37A6F9CDA99E16EBCD5C",
+      "coupon_code": "37A6F9CDA99E16EBCD5C",
+      "date_found": "2025-07-09 23:11:42",
+      "discount": null,
+      "rating": null,
+      "students": null,
+      "language": null
+    }
+  ],
+  "skipped_courses": []
+}

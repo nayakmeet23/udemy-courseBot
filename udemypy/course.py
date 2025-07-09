@@ -1,20 +1,21 @@
 from datetime import datetime
+from typing import Union, Optional
 
 
 class Course:
     def __init__(
         self,
-        id: int,
+        id: Optional[int],
         title: str,
         link: str,
         coupon_code: str,
-        date_found: datetime,
-        discount: int = None,
-        discount_time_left: str = None,
-        students: str = None,
-        rating: str = None,
-        language: str = None,
-        badge: str or None = None,
+        date_found: Union[datetime, str],
+        discount: Optional[int] = None,
+        discount_time_left: Optional[str] = None,
+        students: Optional[str] = None,
+        rating: Optional[str] = None,
+        language: Optional[str] = None,
+        badge: Optional[str] = None,
     ):
         """
         Arguments:
@@ -44,4 +45,11 @@ class Course:
 
     @property
     def link_with_coupon(self):
-        return f"{self.link}?couponCode={self.coupon_code}"
+        """Return the course link with coupon code, avoiding duplicates"""
+        # Check if the link already contains a coupon code
+        if "couponCode=" in self.link:
+            # If coupon code is already in the link, return the link as is
+            return self.link
+        else:
+            # If no coupon code in link, append it
+            return f"{self.link}?couponCode={self.coupon_code}"

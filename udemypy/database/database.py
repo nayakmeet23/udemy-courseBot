@@ -4,12 +4,17 @@ from udemypy.database import connection
 from udemypy.database import settings
 from udemypy.database import script
 from udemypy import course
+from typing import Optional
 
 
 def connect() -> DataBase:
     database = settings.DATABASE
     if database == "mysql":
-        db = connection.MySqlDataBase(settings.DATABASE_URL)
+        try:
+            db = connection.MySqlDataBase(settings.DATABASE_URL)
+        except ImportError:
+            print("[Info] Falling back to SQLite database")
+            db = connection.Sqlite3DataBase(settings.LOCAL_DATABASE_PATH)
     elif database == "sqlite3":
         db = connection.Sqlite3DataBase(settings.LOCAL_DATABASE_PATH)
     else:
@@ -19,22 +24,21 @@ def connect() -> DataBase:
 
 def add_course(
     db: DataBase,
-    course_id: int,
+    course_id: Optional[int],
     course_title: str,
     course_link: str,
     course_coupon: str,
     date_found: str,
-    discount: int,
-    discount_time_left: str,
-    students: str,
-    rating: str,
-    language: str,
-    badge: str,
+    discount: Optional[int],
+    discount_time_left: Optional[str],
+    students: Optional[str],
+    rating: Optional[str],
+    language: Optional[str],
+    badge: Optional[str],
 ) -> None:
     """Adds a course instance to the database."""
     script_path = script.get_path("add_course.sql")
     variables = {
-        "id_value": course_id,
         "title_value": course_title,
         "link_value": course_link,
         "coupon_code_value": course_coupon,
@@ -120,3 +124,10 @@ def remove_course(db: DataBase, course_id: int) -> None:
     variables = {"id_value": course_id}
     sql_script = script.read_script(script_path, variables)
     db.execute_script(sql_script, commit=True)
+
+
+def course_exists_by_link(db: DataBase, course_link: str) -> bool:
+    """Check if a course with the given link already exists in the database."""
+    query = f"SELECT COUNT(*) FROM course WHERE link = '{course_link}'"
+    result = db.execute(query, commit=False)
+    return result[0][0] > 0 if result else False

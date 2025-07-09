@@ -1,0 +1,45 @@
+{
+  "templates": {
+    "telegram_minimal": {
+      "template": "📚 {title}\n\n⭐ {rating}/5 | 👥 {students} students\n{link}\n\nGet this free course! 🎉",
+      "max_length": 4096,
+      "supports_markdown": true,
+      "supports_buttons": true,
+      "variables": {
+        "title": "course_title",
+        "rating": "course_rating",
+        "students": "course_students",
+        "link": "course_link"
+      }
+    },
+    "twitter_compact": {
+      "template": "📚 {title} ⭐{rating}/5 👥{students} 🌍{language} {link} #Udemy #FreeCourse",
+      "max_length": 280,
+      "supports_markdown": false,
+      "supports_buttons": false,
+      "variables": {
+        "title": "course_title",
+        "rating": "course_rating",
+        "students": "course_students",
+        "language": "course_language",
+        "link": "course_link"
+      }
+    },
+    "whatsapp_detailed": {
+      "template": "🎓 *FREE UDEMY COURSE*\n\n📚 *{title}*\n\n⭐ Rating: {rating}/5\n👥 Students: {students}\n🌍 Language: {language}\n⏰ Free for: {discount_time_left}\n\n🔗 {link}\n\n🏆 {badge}\n\nFollow for more free courses! ❤️",
+      "max_length": null,
+      "supports_markdown": true,
+      "supports_buttons": false,
+      "variables": {
+        "title": "course_title",
+        "rating": "course_rating",
+        "students": "course_students",
+        "language": "course_language",
+        "discount_time_left": "course_discount_time_left",
+        "link": "course_link",
+        "badge": "course_badge"
+      }
+    }
+  },
+  "description": "Custom message templates for UdemyPy"
+}

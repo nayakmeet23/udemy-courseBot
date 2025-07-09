@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: udemypy-scraper
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m udemypy.scheduler
+    envVars:
+      - key: DATABASE
+        value: sqlite3
+      - key: PAGES_TO_SCRAPE
+        value: 2
+      - key: FAST_MODE
+        value: true
+      - key: MAX_COURSES_TO_PROCESS
+        value: 5 

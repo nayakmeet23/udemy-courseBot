@@ -1,0 +1,46 @@
+name: Deploy UdemyPy Scraper
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  scrape-and-send:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Create data directory
+      run: mkdir -p data
+      
+    - name: Setup database
+      run: python -m udemypy.database.setup
+      env:
+        DATABASE: sqlite3
+        
+    - name: Find and send courses
+      run: python -m udemypy.scheduler
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
+        CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+        CHANNEL_LINK: ${{ secrets.CHANNEL_LINK }}
+        GITHUB_LINK: ${{ secrets.GITHUB_LINK }}
+        WHATSAPP_LINK: ${{ secrets.WHATSAPP_LINK }}
+        DATABASE: sqlite3
+        PAGES_TO_SCRAPE: 2
+        FAST_MODE: true
+        MAX_COURSES_TO_PROCESS: 5 

@@ -1,18 +1,32 @@
 from os import getenv
+from dotenv import load_dotenv
+import os
 
-# Sender Bots
+# Load environment variables from .env file
+load_dotenv()
+
+# === Sender Bots ===
 GITHUB_LINK = "https://github.com/dylannalex/udemypy"
 WHATSAPP_LINK = "https://whatsapp.com/channel/0029VaHwvWZ7NoZsk8UOUl0z"
 
-## Telegram
+# === Telegram Bot Config ===
 TOKEN = getenv("TOKEN")
 CHANNEL_ID = getenv("CHANNEL_ID")
-DONATE_ME_LINK = getenv("DONATE_ME_LINK")
 CHANNEL_LINK = getenv("CHANNEL_LINK")
-TWITTER_LINK = getenv("TWITTER_LINK")
+DONATE_ME_LINK = getenv("DONATE_ME_LINK")
 
-## Twitter
+# === Optional Twitter Config ===
+TWITTER_LINK = getenv("TWITTER_LINK")
 API_KEY = getenv("API_KEY")
 API_KEY_SECRET = getenv("API_KEY_SECRET")
 ACCESS_TOKEN = getenv("ACCESS_TOKEN")
 ACCESS_TOKEN_SECRET = getenv("ACCESS_TOKEN_SECRET")
+
+# === Scraper Settings ===
+PAGES_TO_SCRAPE = int(getenv("PAGES_TO_SCRAPE", 3))  # Default = 3 if not set
+FREE_COURSE_DISCOUNT = 100
+
+# === ChromeDriver & Browser Settings ===
+CHROMEDRIVER_PATH = getenv("CHROMEDRIVER_PATH", "chromedriver.exe")
+GOOGLE_CHROME_BIN = getenv("GOOGLE_CHROME_BIN", "")  # Optional
+PAGE_LOAD_TIME = int(getenv("PAGE_LOAD_TIME", 5))  # Wait time in seconds
