@@ -53,7 +53,7 @@ class WhatsAppHandler(BotHandler):
         print("[WhatsApp Bot]")
         send_courses.send_courses(
             db,
-            self.bot,
+            self.whatsapp_bot,
             db_settings.WHATSAPP_NAME,
             db_settings.WHATSAPP_ID,
         )
@@ -61,12 +61,10 @@ class WhatsAppHandler(BotHandler):
 
 def schedule_bots(
     bot_handlers: list[BotHandler],
-    waiting_seconds: int,
-    iterations: int,
+    waiting_seconds: int = 60 * 30,  # 30 min default
+    iterations: int = 10,
 ):
     db = database.connect()
-    waiting_seconds = 60 * 30  # 30 min
-    iterations = 10
 
     for iteration in range(iterations):
         # Find courses

@@ -4,12 +4,17 @@ services:
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python -m udemypy.scheduler
+    plan: free
     envVars:
       - key: DATABASE
         value: sqlite3
       - key: PAGES_TO_SCRAPE
-        value: 2
+        value: 1
       - key: FAST_MODE
         value: true
       - key: MAX_COURSES_TO_PROCESS
-        value: 5 
+        value: 3
+      - key: MAX_COURSES_TO_SEND
+        value: 5
+      - key: PYTHONUNBUFFERED
+        value: 1 

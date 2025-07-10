@@ -1,18 +1,18 @@
-name: Deploy UdemyPy Scraper
+name: UdemyPy Bot - Free Deployment
 
 on:
   schedule:
-    # Run every 6 hours
+    # Run every 6 hours (GitHub Actions free tier: 2000 minutes/month)
     - cron: '0 */6 * * *'
   workflow_dispatch: # Allow manual trigger
 
 jobs:
-  scrape-and-send:
+  run-bot:
     runs-on: ubuntu-latest
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -27,20 +27,60 @@ jobs:
     - name: Create data directory
       run: mkdir -p data
       
-    - name: Setup database
-      run: python -m udemypy.database.setup
-      env:
-        DATABASE: sqlite3
-        
-    - name: Find and send courses
-      run: python -m udemypy.scheduler
+    - name: Run UdemyPy Bot
       env:
         TOKEN: ${{ secrets.TOKEN }}
         CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
         CHANNEL_LINK: ${{ secrets.CHANNEL_LINK }}
         GITHUB_LINK: ${{ secrets.GITHUB_LINK }}
         WHATSAPP_LINK: ${{ secrets.WHATSAPP_LINK }}
-        DATABASE: sqlite3
-        PAGES_TO_SCRAPE: 2
+        PAGES_TO_SCRAPE: 1
         FAST_MODE: true
-        MAX_COURSES_TO_PROCESS: 5 
+        MAX_COURSES_TO_PROCESS: 3
+        MAX_COURSES_TO_SEND: 5
+        DATABASE: sqlite3
+        PYTHONUNBUFFERED: 1
+      run: |
+        # Run bot for one iteration (find and send courses)
+        python -c "
+        from udemypy.database import database
+        from udemypy import find_courses, send_courses
+        from udemypy.sender import TelegramBot
+        from udemypy import settings
+        from udemypy.database import settings as db_settings
+        
+        # Connect to database
+        db = database.connect()
+        
+        # Find new courses
+        print('Finding courses...')
+        find_courses.find_courses(db, verbose=True)
+        
+        # Send courses to Telegram
+        print('Sending courses to Telegram...')
+        bot = TelegramBot(
+            settings.TOKEN,
+            settings.CHANNEL_ID,
+            settings.CHANNEL_LINK,
+            settings.GITHUB_LINK,
+            settings.WHATSAPP_LINK,
+        )
+        bot.connect()
+        send_courses.send_courses(
+            db,
+            bot,
+            db_settings.TELEGRAM_NAME,
+            db_settings.TELEGRAM_ID,
+        )
+        
+        db.close()
+        print('Bot run completed!')
+        "
+        
+    - name: Upload database (optional)
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: courses-database
+        path: data/
+        retention-days: 7 
