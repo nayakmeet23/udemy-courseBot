@@ -1,7 +1,13 @@
-import telegram
-from telegram.ext import Updater
-from telegram import InlineKeyboardMarkup
-from telegram import InlineKeyboardButton
+try:
+    import telegram
+    from telegram.ext import Updater
+    from telegram import InlineKeyboardMarkup
+    from telegram import InlineKeyboardButton
+    TELEGRAM_AVAILABLE = True
+except ImportError:
+    TELEGRAM_AVAILABLE = False
+    print("[Warning] Telegram library not available. Install python-telegram-bot==13.15")
+
 from udemypy.course import Course
 from udemypy.sender.text import emojis
 from udemypy.sender.bot import SenderBot
@@ -30,13 +36,6 @@ def _message_title(
 
 
 class TelegramBot(SenderBot):
-    get_course_button_text = f"Get course {emojis.PERSON_RUNNING}"
-    share_button_text = f"Share channel {emojis.SPEAKING_HEAD}"
-    donate_button_text = f"Donate me {emojis.HEART}"
-    twitter_button_text = f"Free Courses on Twitter {emojis.FRONT_FACING_CHICK}"
-    github_repo_text = f"GitHub Repo {emojis.HAPPY_CAT}"
-    whatsapp_repo_text = f"Free Courses on WhatsApp {emojis.SPARKLES}"
-
     def __init__(
         self,
         token: str,
@@ -46,61 +45,109 @@ class TelegramBot(SenderBot):
         whatsapp_link: str,
         sleep_time_per_course: int = 5,
     ):
+        if not TELEGRAM_AVAILABLE:
+            raise ImportError("Telegram library not available. Install python-telegram-bot==13.15")
+        
         self.token = token
         self.channel_id = channel_id
         self.channel_link = channel_link
         self.github_link = github_link
         self.whatsapp_link = whatsapp_link
         self.sleep_time_per_course = sleep_time_per_course
+        
+        # Button texts
+        self.get_course_button_text = f"Get course {emojis.PERSON_RUNNING}"
+        self.share_button_text = f"Share channel {emojis.SPEAKING_HEAD}"
+        self.donate_button_text = f"Donate me {emojis.HEART}"
+        self.twitter_button_text = f"Free Courses on Twitter {emojis.FRONT_FACING_CHICK}"
+        self.github_repo_text = f"GitHub Repo {emojis.HAPPY_CAT}"
+        self.whatsapp_repo_text = f"Free Courses on WhatsApp {emojis.SPARKLES}"
 
     def connect(self) -> None:
-        bot = telegram.Bot(token=self.token)
-        updater = Updater(bot.token, use_context=True)
-        self.dispatcher = updater.dispatcher
+        if not TELEGRAM_AVAILABLE:
+            return
+            
+        try:
+            # Create bot instance
+            self.bot = telegram.Bot(token=self.token)
+            print("[Telegram] Bot initialized successfully")
+        except Exception as e:
+            print(f"[Telegram] Connection failed: {e}")
+            raise
 
     def send_course(self, course: Course) -> None:
-        course_title = get_valid_text(course.title)
-        course_link = get_valid_text(course.link_with_coupon)
-        course_language = get_valid_text(course.language)
-        course_rating = get_valid_text(course.rating)
-        course_students = get_valid_text(course.students)
-        course_discount_time_left = get_valid_text(course.discount_time_left)
-        course_badge = course.badge
+        if not TELEGRAM_AVAILABLE:
+            return
+            
+        try:
+            course_title = get_valid_text(course.title)
+            course_link = get_valid_text(course.link_with_coupon)
+            course_language = get_valid_text(course.language)
+            course_rating = get_valid_text(course.rating)
+            course_students = get_valid_text(course.students)
+            course_discount_time_left = get_valid_text(course.discount_time_left)
+            course_badge = course.badge
 
-        get_course_button = InlineKeyboardButton(
-            text=__class__.get_course_button_text, url=course.link_with_coupon
-        )
+            get_course_button = InlineKeyboardButton(
+                text=self.get_course_button_text, url=course.link_with_coupon
+            )
 
-        share_button = InlineKeyboardButton(
-            text=__class__.share_button_text, url=self.channel_link
-        )
+            share_button = InlineKeyboardButton(
+                text=self.share_button_text, url=self.channel_link
+            )
 
-        # twitter_button = InlineKeyboardButton(
-        # text=messages.twitter_button_text, url=self.twitter_link
-        # )
+            github_button = InlineKeyboardButton(
+                text=self.github_repo_text, url=self.github_link
+            )
 
-        github_button = InlineKeyboardButton(
-            text=__class__.github_repo_text, url=self.github_link
-        )
+            whatsapp_button = InlineKeyboardButton(
+                text=self.whatsapp_repo_text, url=self.whatsapp_link
+            )
 
-        whatsapp_button = InlineKeyboardButton(
-            text=__class__.whatsapp_repo_text, url=self.whatsapp_link
-        )
-
-        self.dispatcher.bot.sendMessage(
-            parse_mode="MarkdownV2",
-            text=_message_title(
-                course_title,
-                course_link,
-                course_rating,
-                course_students,
-                course_language,
-                course_discount_time_left,
-                course_badge,
-            ),
-            chat_id=self.channel_id,
-            reply_markup=InlineKeyboardMarkup(
-                [[get_course_button], [share_button, github_button], [whatsapp_button]]
-            ),
-        )
-        sleep(self.sleep_time_per_course)
+            # Send message using the bot instance - handle async properly
+            import asyncio
+            try:
+                # Try sync version first
+                self.bot.send_message(
+                    chat_id=self.channel_id,
+                    text=_message_title(
+                        course_title,
+                        course_link,
+                        course_rating,
+                        course_students,
+                        course_language,
+                        course_discount_time_left,
+                        course_badge,
+                    ),
+                    parse_mode="MarkdownV2",
+                    reply_markup=InlineKeyboardMarkup(
+                        [[get_course_button], [share_button, github_button], [whatsapp_button]]
+                    ),
+                )
+            except TypeError:
+                # If sync fails, try async
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                try:
+                    loop.run_until_complete(self.bot.send_message(
+                        chat_id=self.channel_id,
+                        text=_message_title(
+                            course_title,
+                            course_link,
+                            course_rating,
+                            course_students,
+                            course_language,
+                            course_discount_time_left,
+                            course_badge,
+                        ),
+                        parse_mode="MarkdownV2",
+                        reply_markup=InlineKeyboardMarkup(
+                            [[get_course_button], [share_button, github_button], [whatsapp_button]]
+                        ),
+                    ))
+                finally:
+                    loop.close()
+            sleep(self.sleep_time_per_course)
+        except Exception as e:
+            print(f"[Telegram] Failed to send course {course.title}: {e}")
+            raise
