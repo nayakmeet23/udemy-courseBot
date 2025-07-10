@@ -1,9 +1,13 @@
 from os import getenv
-from dotenv import load_dotenv
 import os
 
-# Load environment variables from .env file
-load_dotenv()
+# Try to load environment variables from .env file
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # If dotenv is not available, continue without it
+    pass
 
 # === Sender Bots ===
 GITHUB_LINK = "https://github.com/dylannalex/udemypy"
