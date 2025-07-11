@@ -26,14 +26,18 @@ services:
       - key: WHATSAPP_LINK
         value: https://whatsapp.com/channel/0029VaHwvWZ7NoZsk8UOUl0z
       
-      # Scraper Settings
+      # Optimized Scraper Settings for Render
       - key: PAGES_TO_SCRAPE
         value: 1
       - key: FAST_MODE
         value: true
       - key: MAX_COURSES_TO_PROCESS
-        value: 3
+        value: 2
       - key: MAX_COURSES_TO_SEND
-        value: 5
+        value: 3
       - key: PYTHONUNBUFFERED
-        value: 1 
+        value: 1
+      
+      # Telegram Bot Rate Limiting
+      - key: TELEGRAM_SLEEP_TIME
+        value: 15 

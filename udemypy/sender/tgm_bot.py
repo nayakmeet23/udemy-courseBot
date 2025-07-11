@@ -1,18 +1,13 @@
-try:
-    import telegram
-    from telegram.ext import Updater
-    from telegram import InlineKeyboardMarkup
-    from telegram import InlineKeyboardButton
-    TELEGRAM_AVAILABLE = True
-except ImportError:
-    TELEGRAM_AVAILABLE = False
-    print("[Warning] Telegram library not available. Install python-telegram-bot==13.15")
+import time
+import asyncio
+from telegram import Bot, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram.error import TelegramError, RetryAfter, NetworkError
+from telegram.request import HTTPXRequest
 
 from udemypy.course import Course
 from udemypy.sender.text import emojis
 from udemypy.sender.bot import SenderBot
 from udemypy.sender.text.markdown_validation import get_valid_text
-from time import sleep
 
 
 def _message_title(
@@ -43,43 +38,80 @@ class TelegramBot(SenderBot):
         channel_link: str,
         github_link: str,
         whatsapp_link: str,
-        sleep_time_per_course: int = 5,
+        sleep_time_per_course: int = 10,  # Increased default sleep time
     ):
-        if not TELEGRAM_AVAILABLE:
-            raise ImportError("Telegram library not available. Install python-telegram-bot==13.15")
-        
         self.token = token
         self.channel_id = channel_id
         self.channel_link = channel_link
         self.github_link = github_link
         self.whatsapp_link = whatsapp_link
         self.sleep_time_per_course = sleep_time_per_course
+        self.bot = None
         
         # Button texts
         self.get_course_button_text = f"Get course {emojis.PERSON_RUNNING}"
         self.share_button_text = f"Share channel {emojis.SPEAKING_HEAD}"
-        self.donate_button_text = f"Donate me {emojis.HEART}"
-        self.twitter_button_text = f"Free Courses on Twitter {emojis.FRONT_FACING_CHICK}"
         self.github_repo_text = f"GitHub Repo {emojis.HAPPY_CAT}"
         self.whatsapp_repo_text = f"Free Courses on WhatsApp {emojis.SPARKLES}"
 
     def connect(self) -> None:
-        if not TELEGRAM_AVAILABLE:
-            return
-            
         try:
-            # Create bot instance
-            self.bot = telegram.Bot(token=self.token)
-            print("[Telegram] Bot initialized successfully")
+            # Configure HTTPX request with proper connection pool settings
+            request = HTTPXRequest(
+                connection_pool_size=8,  # Reduced pool size
+                connect_timeout=30.0,
+                read_timeout=30.0,
+                write_timeout=30.0,
+                pool_timeout=30.0,  # Increased pool timeout
+            )
+            
+            # Create bot instance with custom request
+            self.bot = Bot(token=self.token, request=request)
+            print("[Telegram] Bot initialized successfully with optimized connection pool")
         except Exception as e:
             print(f"[Telegram] Connection failed: {e}")
             raise
 
+    async def _send_message_with_retry(self, message_text: str, keyboard: InlineKeyboardMarkup, max_retries: int = 3):
+        """Send message with retry logic and proper error handling"""
+        for attempt in range(max_retries):
+            try:
+                await self.bot.send_message(
+                    chat_id=self.channel_id,
+                    text=message_text,
+                    parse_mode="MarkdownV2",
+                    reply_markup=keyboard,
+                )
+                print(f"[Telegram] ✅ Message sent successfully (attempt {attempt + 1})")
+                return True
+                
+            except RetryAfter as e:
+                wait_time = e.retry_after + 2  # Add extra buffer
+                print(f"[Telegram] ⏳ Rate limited, waiting {wait_time} seconds...")
+                await asyncio.sleep(wait_time)
+                
+            except NetworkError as e:
+                wait_time = (attempt + 1) * 5  # Exponential backoff
+                print(f"[Telegram] 🌐 Network error (attempt {attempt + 1}/{max_retries}), waiting {wait_time}s: {e}")
+                await asyncio.sleep(wait_time)
+                
+            except TelegramError as e:
+                print(f"[Telegram] ❌ Telegram error (attempt {attempt + 1}/{max_retries}): {e}")
+                if attempt == max_retries - 1:
+                    raise
+                await asyncio.sleep(5)
+                
+            except Exception as e:
+                print(f"[Telegram] ❌ Unexpected error (attempt {attempt + 1}/{max_retries}): {e}")
+                if attempt == max_retries - 1:
+                    raise
+                await asyncio.sleep(5)
+        
+        return False
+
     def send_course(self, course: Course) -> None:
-        if not TELEGRAM_AVAILABLE:
-            return
-            
         try:
+            # Prepare course data
             course_title = get_valid_text(course.title)
             course_link = get_valid_text(course.link_with_coupon)
             course_language = get_valid_text(course.language)
@@ -88,25 +120,20 @@ class TelegramBot(SenderBot):
             course_discount_time_left = get_valid_text(course.discount_time_left)
             course_badge = course.badge
 
+            # Create buttons
             get_course_button = InlineKeyboardButton(
                 text=self.get_course_button_text, url=course.link_with_coupon
             )
-
             share_button = InlineKeyboardButton(
                 text=self.share_button_text, url=self.channel_link
             )
-
             github_button = InlineKeyboardButton(
                 text=self.github_repo_text, url=self.github_link
             )
-
             whatsapp_button = InlineKeyboardButton(
                 text=self.whatsapp_repo_text, url=self.whatsapp_link
             )
 
-            # Send message using the bot instance - handle async properly
-            import asyncio
-            
             # Create message content
             message_text = _message_title(
                 course_title,
@@ -119,27 +146,39 @@ class TelegramBot(SenderBot):
             )
             
             # Create keyboard markup
-            keyboard = InlineKeyboardMarkup(
-                [[get_course_button], [share_button, github_button], [whatsapp_button]]
-            )
+            keyboard = InlineKeyboardMarkup([
+                [get_course_button],
+                [share_button, github_button],
+                [whatsapp_button]
+            ])
             
-            # Use async approach for python-telegram-bot==13.15
-            async def send_message_async():
-                await self.bot.send_message(
-                    chat_id=self.channel_id,
-                    text=message_text,
-                    parse_mode="MarkdownV2",
-                    reply_markup=keyboard,
-                )
+            # Send message with proper async handling
+            async def send_async():
+                await self._send_message_with_retry(message_text, keyboard)
             
-            # Run the async function
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
+            # Run async function
             try:
-                loop.run_until_complete(send_message_async())
-            finally:
-                loop.close()
-            sleep(self.sleep_time_per_course)
+                # Try to use existing event loop
+                loop = asyncio.get_event_loop()
+                if loop.is_running():
+                    # If loop is running, create a new task
+                    asyncio.create_task(send_async())
+                else:
+                    # If loop is not running, run it
+                    loop.run_until_complete(send_async())
+            except RuntimeError:
+                # No event loop, create new one
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                try:
+                    loop.run_until_complete(send_async())
+                finally:
+                    loop.close()
+            
+            # Wait between messages to avoid rate limiting
+            print(f"[Telegram] ⏳ Waiting {self.sleep_time_per_course} seconds before next message...")
+            time.sleep(self.sleep_time_per_course)
+            
         except Exception as e:
-            print(f"[Telegram] Failed to send course {course.title}: {e}")
+            print(f"[Telegram] ❌ Failed to send course '{course.title}': {e}")
             raise
