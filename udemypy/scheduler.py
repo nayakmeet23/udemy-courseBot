@@ -19,18 +19,26 @@ class BotHandler(ABC):
         pass
 
     @abstractmethod
-    def send_courses(self, verbose: bool):
+    def send_courses(self, db):
         pass
 
 
 class TelegramHandler(BotHandler):
     def __init__(self):
+        # Add type checking for environment variables
+        if not settings.TOKEN:
+            raise ValueError("TOKEN environment variable is required")
+        if not settings.CHANNEL_ID:
+            raise ValueError("CHANNEL_ID environment variable is required")
+        if not settings.CHANNEL_LINK:
+            raise ValueError("CHANNEL_LINK environment variable is required")
+            
         self.bot = TelegramBot(
-            settings.TOKEN,
-            settings.CHANNEL_ID,
-            settings.CHANNEL_LINK,
-            settings.GITHUB_LINK,
-            settings.WHATSAPP_LINK,
+            token=settings.TOKEN,
+            channel_id=settings.CHANNEL_ID,
+            channel_link=settings.CHANNEL_LINK,
+            github_link=settings.GITHUB_LINK,
+            whatsapp_link=settings.WHATSAPP_LINK,
         )
 
     def send_courses(self, db):
@@ -46,7 +54,9 @@ class TelegramHandler(BotHandler):
 
 class WhatsAppHandler(BotHandler):
     def __init__(self):
-        self.whatsapp_bot = WhatsAppBot(ud_settings.CHROMEDRIVER_PATH)
+        # Add type checking for chromedriver path
+        chromedriver_path = ud_settings.CHROMEDRIVER_PATH or "chromedriver.exe"
+        self.whatsapp_bot = WhatsAppBot(chromedriver_path)
         self.whatsapp_bot.connect()  # Only first connection
 
     def send_courses(self, db):
