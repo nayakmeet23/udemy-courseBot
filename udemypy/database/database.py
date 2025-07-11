@@ -16,11 +16,17 @@ def connect() -> DataBase:
             print("[ERROR] MySQL connector not available. Install mysql-connector-python")
             raise ImportError("MySQL connector not available. Install mysql-connector-python")
     elif database == "sqlite3":
-        print("[ERROR] SQLite is not supported. Use MySQL only.")
-        raise ValueError("SQLite is not supported. Use MySQL only.")
+        # ✅ Enable SQLite3 support
+        try:
+            db_path = settings.LOCAL_DATABASE_PATH
+            db = connection.Sqlite3DataBase(db_path)
+            print(f"[Database] Connected to SQLite: {db_path}")
+        except Exception as e:
+            print(f"[ERROR] SQLite connection failed: {e}")
+            raise ValueError(f"SQLite connection failed: {e}")
     else:
-        print("[ERROR] Only MySQL is supported. Set DATABASE=mysql")
-        raise ValueError("Only MySQL is supported. Set DATABASE=mysql")
+        print("[ERROR] Only MySQL and SQLite3 are supported. Set DATABASE=mysql or DATABASE=sqlite3")
+        raise ValueError("Only MySQL and SQLite3 are supported. Set DATABASE=mysql or DATABASE=sqlite3")
     return db
 
 

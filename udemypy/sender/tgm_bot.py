@@ -106,47 +106,39 @@ class TelegramBot(SenderBot):
 
             # Send message using the bot instance - handle async properly
             import asyncio
-            try:
-                # Try sync version first
-                self.bot.send_message(
+            
+            # Create message content
+            message_text = _message_title(
+                course_title,
+                course_link,
+                course_rating,
+                course_students,
+                course_language,
+                course_discount_time_left,
+                course_badge,
+            )
+            
+            # Create keyboard markup
+            keyboard = InlineKeyboardMarkup(
+                [[get_course_button], [share_button, github_button], [whatsapp_button]]
+            )
+            
+            # Use async approach for python-telegram-bot==13.15
+            async def send_message_async():
+                await self.bot.send_message(
                     chat_id=self.channel_id,
-                    text=_message_title(
-                        course_title,
-                        course_link,
-                        course_rating,
-                        course_students,
-                        course_language,
-                        course_discount_time_left,
-                        course_badge,
-                    ),
+                    text=message_text,
                     parse_mode="MarkdownV2",
-                    reply_markup=InlineKeyboardMarkup(
-                        [[get_course_button], [share_button, github_button], [whatsapp_button]]
-                    ),
+                    reply_markup=keyboard,
                 )
-            except TypeError:
-                # If sync fails, try async
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                try:
-                    loop.run_until_complete(self.bot.send_message(
-                        chat_id=self.channel_id,
-                        text=_message_title(
-                            course_title,
-                            course_link,
-                            course_rating,
-                            course_students,
-                            course_language,
-                            course_discount_time_left,
-                            course_badge,
-                        ),
-                        parse_mode="MarkdownV2",
-                        reply_markup=InlineKeyboardMarkup(
-                            [[get_course_button], [share_button, github_button], [whatsapp_button]]
-                        ),
-                    ))
-                finally:
-                    loop.close()
+            
+            # Run the async function
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            try:
+                loop.run_until_complete(send_message_async())
+            finally:
+                loop.close()
             sleep(self.sleep_time_per_course)
         except Exception as e:
             print(f"[Telegram] Failed to send course {course.title}: {e}")

@@ -5,7 +5,7 @@ import os
 if os.path.exists('.env'):
     try:
         from dotenv import load_dotenv
-        load_dotenv()
+load_dotenv()
     except ImportError:
         # If dotenv is not available, continue without it
         pass

@@ -5,13 +5,28 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
-    startCommand: python start_bot.py
+    startCommand: python render_deploy.py
     plan: free
     envVars:
+      # Database - Use SQLite3 for Render free tier
       - key: DATABASE
-        value: mysql
-      - key: DATABASE_URL
-        value: mysql://root:@127.0.0.1:3308/tg_enroll
+        value: sqlite3
+      
+      # Required Telegram Bot Variables (set these in Render dashboard)
+      - key: TOKEN
+        sync: false
+      - key: CHANNEL_ID
+        sync: false
+      - key: CHANNEL_LINK
+        sync: false
+      
+      # Optional Links
+      - key: GITHUB_LINK
+        value: https://github.com/dylannalex/udemypy
+      - key: WHATSAPP_LINK
+        value: https://whatsapp.com/channel/0029VaHwvWZ7NoZsk8UOUl0z
+      
+      # Scraper Settings
       - key: PAGES_TO_SCRAPE
         value: 1
       - key: FAST_MODE
