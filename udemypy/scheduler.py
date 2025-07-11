@@ -11,6 +11,7 @@ from udemypy.udemy import settings as ud_settings
 from udemypy import settings
 from udemypy.sender import TelegramBot, WhatsAppBot
 from udemypy.utils import clear_console
+from udemypy.database import setup  # ✅ Add this import
 
 
 class BotHandler(ABC):
@@ -59,11 +60,31 @@ class WhatsAppHandler(BotHandler):
         )
 
 
+def setup_database_if_needed():
+    """Setup database tables if they don't exist"""
+    try:
+        db = database.connect()
+        # Try to query the course table to see if it exists
+        db.execute("SELECT COUNT(*) FROM course", commit=False)
+        print("[Database] Tables already exist")
+    except Exception as e:
+        if "no such table" in str(e).lower():
+            print("[Database] Tables don't exist, creating them...")
+            setup.setup_database()
+            print("[Database] Tables created successfully")
+        else:
+            print(f"[Database] Error checking tables: {e}")
+            raise
+
+
 def schedule_bots(
     bot_handlers: list[BotHandler],
     waiting_seconds: int = 60 * 30,  # 30 min default
     iterations: int = 10,
 ):
+    # ✅ Setup database tables if they don't exist
+    setup_database_if_needed()
+    
     db = database.connect()
 
     for iteration in range(iterations):

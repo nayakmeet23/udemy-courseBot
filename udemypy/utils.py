@@ -94,6 +94,8 @@ def print_detailed_analytics(scrapers, final_courses):
     print(f"  • Total courses added: {total_added}")
     print(f"  • Total errors: {total_errors}")
     
+    # ✅ Fix: Initialize success_rate variable
+    success_rate = 0
     if total_found > 0:
         success_rate = (total_added / total_found) * 100
         print(f"  • Success rate: {success_rate:.1f}%")
@@ -115,7 +117,7 @@ def print_detailed_analytics(scrapers, final_courses):
     if total_errors > 0:
         print(f"  ⚠️  {total_errors} errors detected - check network connectivity and site availability")
     
-    if success_rate < 50:
+    if success_rate < 50 and total_found > 0:  # ✅ Fix: Add condition
         print(f"  ⚠️  Low success rate ({success_rate:.1f}%) - consider adjusting scraping parameters")
     
     if total_added == 0:
