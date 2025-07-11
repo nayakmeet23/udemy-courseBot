@@ -5,10 +5,13 @@ from udemypy.database import settings
 from udemypy.database import script
 from udemypy import course
 from typing import Optional
+import os
 
 
 def connect() -> DataBase:
-    database = settings.DATABASE
+    # Force SQLite3 for Render deployment
+    database = "sqlite3"
+    
     if database == "mysql":
         try:
             db = connection.MySqlDataBase(settings.DATABASE_URL)
@@ -18,6 +21,12 @@ def connect() -> DataBase:
     elif database == "sqlite3":
         # ✅ Enable SQLite3 support
         try:
+            # Ensure data directory exists
+            data_dir = os.path.dirname(settings.LOCAL_DATABASE_PATH)
+            if not os.path.exists(data_dir):
+                os.makedirs(data_dir)
+                print(f"[Database] Created data directory: {data_dir}")
+            
             db_path = settings.LOCAL_DATABASE_PATH
             db = connection.Sqlite3DataBase(db_path)
             print(f"[Database] Connected to SQLite: {db_path}")
