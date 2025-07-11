@@ -1,43 +1,19 @@
 services:
   - type: worker
-    name: udemypy-scraper
+    name: udemypy-bot
     env: python
-    buildCommand: |
-      pip install --upgrade pip
-      pip install -r requirements.txt
-    startCommand: python render_deploy.py
-    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m udemypy.scheduler
     envVars:
-      # Database - Use SQLite3 for Render free tier
       - key: DATABASE
         value: sqlite3
-      
-      # Required Telegram Bot Variables (set these in Render dashboard)
       - key: TOKEN
         sync: false
       - key: CHANNEL_ID
         sync: false
       - key: CHANNEL_LINK
         sync: false
-      
-      # Optional Links
-      - key: GITHUB_LINK
-        value: https://github.com/dylannalex/udemypy
-      - key: WHATSAPP_LINK
-        value: https://whatsapp.com/channel/0029VaHwvWZ7NoZsk8UOUl0z
-      
-      # Optimized Scraper Settings for Render
       - key: PAGES_TO_SCRAPE
-        value: 1
-      - key: FAST_MODE
-        value: true
-      - key: MAX_COURSES_TO_PROCESS
         value: 2
       - key: MAX_COURSES_TO_SEND
-        value: 3
-      - key: PYTHONUNBUFFERED
-        value: 1
-      
-      # Telegram Bot Rate Limiting
-      - key: TELEGRAM_SLEEP_TIME
-        value: 15 
+        value: 5 
