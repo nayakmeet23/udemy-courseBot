@@ -1,20 +1,11 @@
-# Core dependencies
 python-telegram-bot==20.7
+aiohttp==3.9.1
 requests==2.31.0
 beautifulsoup4==4.12.2
-# lxml==4.9.3  # ❌ Remove this - incompatible with Python 3.13
-aiohttp==3.9.1
 python-dotenv==1.0.0
-
-# Database (SQLite3 is built-in, no extra package needed)
-# mysql-connector-python==8.2.0  # Only if using MySQL
-
-# Web scraping (simplified for Render)
 selenium==4.15.2
 webdriver-manager==4.0.1
-
-# Utilities
 schedule==1.2.0
-
-# Alternative to lxml - use html5lib instead
 html5lib==1.1
+flask==2.3.3
+# Removed mysql-connector-python and lxml
