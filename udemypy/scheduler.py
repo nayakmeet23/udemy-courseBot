@@ -119,9 +119,29 @@ def schedule_bots(
     db.close()
 
 
-if __name__ == "__main__":
-    schedule_bots(
-        bot_handlers=[TelegramHandler()],
-        waiting_seconds=60 * 30,
-        iterations=20,
+def run_scheduler():
+    from udemypy.sender.tgm_bot import TelegramBot
+    from udemypy.database import database, settings as db_settings
+    from udemypy import settings as global_settings
+
+    db = database.connect()
+    telegram_bot = TelegramBot(
+        token=global_settings.TOKEN,
+        channel_id=global_settings.CHANNEL_ID,
+        channel_link=global_settings.CHANNEL_LINK,
+        github_link=global_settings.GITHUB_LINK,
+        whatsapp_link=global_settings.WHATSAPP_LINK,
+        sleep_time_per_course=10,
     )
+    telegram_bot.connect()
+
+    # Call your scheduling logic here
+    # For example, if you have a function like schedule_bots:
+    schedule_bots(
+        bot_handlers=[telegram_bot],
+        waiting_seconds=60 * 30,  # 30 minutes
+        iterations=1,  # Or whatever you want for a single run
+    )
+
+if __name__ == "__main__":
+    run_scheduler()

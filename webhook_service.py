@@ -4,6 +4,7 @@ from udemypy import settings
 from udemypy.database import database
 from udemypy.database import settings as db_settings
 from udemypy.send_courses import send_courses
+from udemypy.scheduler import run_scheduler
 
 app = Flask(__name__)
 
@@ -26,13 +27,7 @@ def webhook():
     # If the user sends "/sendcourses", trigger sending to the channel
     if 'message' in update and 'text' in update['message']:
         if update['message']['text'] == '/sendcourses':
-            db = database.connect()
-            send_courses(
-                db=db,
-                bot=bot,
-                social_media_name=db_settings.TELEGRAM_NAME,
-                social_media_id=db_settings.TELEGRAM_ID,
-            )
+            run_scheduler()
     return 'ok'
 
 if __name__ == '__main__':
