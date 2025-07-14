@@ -24,11 +24,14 @@ def webhook():
     update = request.get_json(force=True)
     print(f"[Webhook] Received update: {update}")
 
-    # If the user sends "/sendcourses", trigger sending to the channel
+    # If the user sends "/sendcourses", trigger the scheduler logic
     if 'message' in update and 'text' in update['message']:
-        if update['message']['text'] == '/sendcourses':
+        text = update['message']['text'].strip()
+        if text == '/sendcourses':
+            print("[Webhook] Triggering scheduler logic via run_scheduler()")
             run_scheduler()
-    return 'ok'
+            return 'Scheduler triggered', 200
+    return 'ok', 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000) 
