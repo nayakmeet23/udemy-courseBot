@@ -10,12 +10,16 @@ class Course:
         link: str,
         coupon_code: str,
         date_found: Union[datetime, str],
-        discount: Optional[int] = None,
-        discount_time_left: Optional[str] = None,
-        students: Optional[str] = None,
+        current_price: Optional[str] = None,
+        previous_price: Optional[str] = None,
         rating: Optional[str] = None,
+        category: Optional[str] = None,
+        image_url: Optional[str] = None,
+        students: Optional[str] = None,
         language: Optional[str] = None,
         badge: Optional[str] = None,
+        discount_time_left: Optional[str] = None,
+        source: Optional[str] = None,
     ):
         """
         Arguments:
@@ -24,24 +28,32 @@ class Course:
             @link: course link
             @coupon_code: course discount coupon code
             @date_found: date when the course was scraped
-            @discount: discount percentage (1 to 100)
-            @discount_time_left: discount time left (hours or days)
+            @current_price: current price of the course
+            @previous_price: previous price of the course
+            @rating: course rating (as string)
+            @category: course category
+            @image_url: course image url
             @students: number of students enrolled to the course
-            @rating: course rating (from 0 to 5). It's a str value since it needs to be precise
             @language: course language
             @badge: course badge (Bestseller, Highest rated, etc)
+            @discount_time_left: discount time left (hours or days)
+            @source: source website name
         """
         self.id = id
         self.title = title
         self.link = link
         self.coupon_code = coupon_code
         self.date_found = date_found
-        self.discount = discount
-        self.discount_time_left = discount_time_left
-        self.students = students
+        self.current_price = current_price
+        self.previous_price = previous_price
         self.rating = rating
+        self.category = category
+        self.image_url = image_url
+        self.students = students
         self.language = language
         self.badge = badge
+        self.discount_time_left = discount_time_left
+        self.source = source
 
     @property
     def link_with_coupon(self):

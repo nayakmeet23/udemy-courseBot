@@ -1,14 +1,5 @@
 from typing import Any
 from abc import ABC, abstractmethod
-from urllib.parse import urlparse
-
-try:
-    import mysql.connector
-    MYSQL_AVAILABLE = True
-    print("[Info] MySQL connector imported successfully")
-except ImportError:
-    MYSQL_AVAILABLE = False
-    print("[Warning] Cannot use MySQL connector. To use MySQL, install mysql-connector-python")
 
 try:
     import sqlite3
@@ -62,44 +53,6 @@ class DataBase(ABC):
                         sep="\n",
                     )
         return output_list
-
-
-class MySqlDataBase(DataBase):  # ✅ Fix: Now inherits from DataBase
-    def __init__(self, database_url: str):
-        if not MYSQL_AVAILABLE:
-            raise ImportError("MySQL connector not available. Install mysql-connector-python")
-        self.database_url = database_url
-        self.connect()
-
-    def connect(self):
-        dbc = urlparse(self.database_url)
-        self.db = mysql.connector.connect(
-            host=dbc.hostname,
-            user=dbc.username,
-            database=dbc.path.lstrip("/"),
-            passwd=dbc.password,
-        )
-
-    def execute(self, query: str, commit: bool) -> Any:
-        cursor = self.db.cursor()
-        cursor.execute(query)
-        try:
-            result = cursor.fetchall()
-        except:
-            result = []
-        if commit:
-            self.commit()
-        cursor.close()
-        return result
-
-    def commit(self):
-        self.db.commit()
-
-    def reconnect(self):
-        self.db.reconnect()
-
-    def close(self):
-        self.db.close()
 
 
 class Sqlite3DataBase(DataBase):

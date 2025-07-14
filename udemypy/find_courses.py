@@ -13,17 +13,21 @@ def _save_courses(db, courses: list[course.Course]):
                 continue
             database.add_course(
                 db,
-                course_.id,  # This will be None, letting DB auto-increment
+                course_.id,
                 course_.title,
-                course_.link,  # This now contains the full link with coupon code
+                course_.link,
                 course_.coupon_code,
                 str(course_.date_found) if course_.date_found else "",
-                100,  # Assume all courses are free (100% discount)
-                "Unknown",  # discount_time_left
-                "Unknown",  # students
-                "Unknown",  # rating
-                "Unknown",  # language
-                "Unknown",  # badge
+                course_.current_price,
+                course_.previous_price,
+                course_.rating,
+                course_.category,
+                course_.image_url,
+                course_.students,
+                course_.language,
+                course_.badge,
+                course_.discount_time_left,
+                course_.source,
             )
         except Exception as exception:
             # Handle duplicate entry errors gracefully

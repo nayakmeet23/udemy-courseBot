@@ -49,3 +49,26 @@ def send_courses(
             social_media_id,
             datetime.now(),
         )
+
+
+if __name__ == "__main__":
+    from udemypy.sender.tgm_bot import TelegramBot
+    from udemypy import settings as global_settings
+    from udemypy.database import settings as db_settings
+
+    db = database.connect()
+    telegram_bot = TelegramBot(
+        token=global_settings.TOKEN,
+        channel_id=global_settings.CHANNEL_ID,
+        channel_link=global_settings.CHANNEL_LINK,
+        github_link=global_settings.GITHUB_LINK,
+        whatsapp_link=global_settings.WHATSAPP_LINK,
+        sleep_time_per_course=10,
+    )
+    telegram_bot.connect()
+    send_courses(
+        db=db,
+        bot=telegram_bot,
+        social_media_name=db_settings.TELEGRAM_NAME,
+        social_media_id=db_settings.TELEGRAM_ID,
+    )

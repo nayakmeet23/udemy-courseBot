@@ -173,7 +173,8 @@ class TelegramBot(SenderBot):
                 try:
                     loop.run_until_complete(send_async())
                 finally:
-                    loop.close()
+                    # loop.close()  # Removed to prevent closing the event loop prematurely
+                    pass
             
             # Wait between messages to avoid rate limiting
             print(f"[Telegram] ⏳ Waiting {self.sleep_time_per_course} seconds before next message...")

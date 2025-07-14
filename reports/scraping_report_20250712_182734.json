@@ -1,0 +1,33 @@
+{
+  "timestamp": "20250712_182734",
+  "summary": {
+    "total_courses_found": 0,
+    "scrapers_used": 3,
+    "total_skipped_courses": 0
+  },
+  "scraper_stats": {
+    "DiscudemyScraper": {
+      "total_found": 0,
+      "added": 0,
+      "skipped_duplicate_coupon": 0,
+      "skipped_no_coupon": 0,
+      "errors": 0
+    },
+    "YoFreeSamplesScraper": {
+      "total_found": 0,
+      "added": 0,
+      "skipped_duplicate_coupon": 0,
+      "skipped_no_coupon": 0,
+      "errors": 0
+    },
+    "RealDiscountScraper": {
+      "total_found": 0,
+      "added": 0,
+      "skipped_duplicate_coupon": 0,
+      "skipped_no_coupon": 0,
+      "errors": 0
+    }
+  },
+  "courses": [],
+  "skipped_courses": []
+}

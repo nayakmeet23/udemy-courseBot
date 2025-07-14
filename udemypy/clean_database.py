@@ -29,6 +29,13 @@ def _remove_courses(db, courses: list[course.Course]) -> None:
         database.remove_course(db, course_.id)
 
 
+def wipe_database():
+    db = database.connect()
+    db.execute("DELETE FROM course_social_media;", commit=True)
+    db.execute("DELETE FROM course;", commit=True)
+    print("[Database] All course data wiped.")
+
+
 def clean_database(strategies: list[CleaningStrategy]) -> None:
     # Connect to database and retrieve courses
     db = database.connect()
@@ -63,4 +70,5 @@ def clean_database(strategies: list[CleaningStrategy]) -> None:
 
 
 if __name__ == "__main__":
+    wipe_database()
     clean_database([CleaningStrategy.OLD])

@@ -10,8 +10,15 @@ import asyncio
 import time as pytime
 
 
-def _delete_duplicated_courses(courses: List[dict]) -> List[dict]:
-    return [dict(t) for t in {tuple(sorted(course.items())) for course in courses}]
+def _delete_duplicated_courses(courses: List[course.Course]) -> List[course.Course]:
+    seen = set()
+    unique_courses = []
+    for c in courses:
+        key = (c.title, c.link, c.coupon_code, c.date_found)
+        if key not in seen:
+            seen.add(key)
+            unique_courses.append(c)
+    return unique_courses
 
 
 def _scrape_courses(pages: int) -> List[course.Course]:
@@ -33,7 +40,7 @@ def _scrape_courses(pages: int) -> List[course.Course]:
         # Filter out courses with duplicate coupon codes
         filtered_courses = []
         for course_data in courses_scraper.courses:
-            coupon_code = course_data.get("coupon_code", "Unknown")
+            coupon_code = course_data.coupon_code
             if coupon_code != "Unknown" and coupon_code not in used_coupon_codes:
                 used_coupon_codes.add(coupon_code)
                 filtered_courses.append(course_data)
@@ -52,11 +59,21 @@ def _scrape_courses(pages: int) -> List[course.Course]:
     # Save detailed reports
     final_courses = [
         course.Course(
-            id=None,  # Let database auto-generate ID
-            title=c["title"],
-            link=c["link"],
-            coupon_code=c["coupon_code"],
-            date_found=c["date_found"],
+            id=None,
+            title=c.title,
+            link=c.link,
+            coupon_code=c.coupon_code,
+            date_found=c.date_found,
+            current_price=getattr(c, "current_price", "FREE") or "FREE",
+            previous_price=getattr(c, "previous_price", "Unknown") or "Unknown",
+            rating=getattr(c, "rating", "4.5") or "4.5",
+            category=getattr(c, "category", "Unknown") or "Unknown",
+            image_url=getattr(c, "image_url", "Unknown") or "Unknown",
+            students=getattr(c, "students", "Unknown") or "Unknown",
+            language=getattr(c, "language", "Unknown") or "Unknown",
+            badge=getattr(c, "badge", "Unknown") or "Unknown",
+            discount_time_left=getattr(c, "discount_time_left", "Unknown") or "Unknown",
+            source=getattr(c, "source", "Unknown") or "Unknown",
         )
         for c in scraped_courses
     ]

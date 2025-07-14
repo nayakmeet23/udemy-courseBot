@@ -58,9 +58,9 @@ class _CoursesScraper(ABC):
             self.stats["skipped_no_coupon"] += 1
             return
 
-        # Check for duplicate coupon codes
-        existing_coupons = [course.coupon_code for course in self.courses]
-        if coupon_code in existing_coupons:
+        # Check for duplicate by (title, link, coupon_code)
+        existing_keys = {(c.title, c.link, c.coupon_code) for c in self.courses}
+        if (title, link, coupon_code) in existing_keys:
             self.stats["skipped_duplicate_coupon"] += 1
             return
 
@@ -75,6 +75,7 @@ class _CoursesScraper(ABC):
 
         self.courses.append(course_obj)
         self.stats["added"] += 1
+        self.stats["total_found"] += 1
 
     def print_analytics(self, scraper_name):
         print(f"\n📊 {scraper_name} Analytics:")
@@ -201,7 +202,6 @@ class YoFreeSamplesScraper(_CoursesScraper):
 
     def find_courses(self):
         print(f"[YoFreeSamples] Scraping {self.pages} pages...")
-        
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         try:
@@ -212,7 +212,6 @@ class YoFreeSamplesScraper(_CoursesScraper):
     async def _make_request_with_retry(self, session, url):
         max_retries = 3
         retry_delays = [2, 5, 10]
-
         for attempt in range(max_retries + 1):
             try:
                 headers = self.get_random_headers()
@@ -236,48 +235,110 @@ class YoFreeSamplesScraper(_CoursesScraper):
         async with aiohttp.ClientSession() as session:
             for page in range(1, self.pages + 1):
                 url = f"{self.base_url}?page={page}" if page > 1 else self.base_url
-                
                 response = await self._make_request_with_retry(session, url)
                 if not response:
                     continue
-
                 try:
-                    # Use html5lib parser instead of lxml
                     soup = BeautifulSoup(response, 'html5lib')
-                    
-                    # Find course entries
-                    course_entries = soup.find_all('div', class_='course-entry') or soup.find_all('article') or soup.find_all('div', class_='course')
-                    
-                    for entry in course_entries:
+                    course_blocks = soup.find_all('div', class_='wp-block-kadence-rowlayout')
+                    for block in course_blocks:
                         try:
-                            # Extract course link
-                            link_elem = entry.find('a', href=True)
-                            if not link_elem:
-                                continue
-                            
-                            course_url = link_elem['href']
-                            if not course_url.startswith('http'):
-                                course_url = urljoin(self.base_url, course_url)
-                            
-                            # Extract title
-                            title_elem = entry.find('h2') or entry.find('h3') or entry.find('h1')
-                            if not title_elem:
-                                title = link_elem.get_text(strip=True)
+                            # Title
+                            title = None
+                            title_elem = block.find('h4', class_='wp-block-heading')
+                            if title_elem:
+                                a_title = title_elem.find('a')
+                                if a_title:
+                                    title = a_title.get_text(strip=True)
+                            # Udemy link
+                            udemy_link = None
+                            a_button = block.find('a', class_='external_link_button')
+                            if a_button and a_button.has_attr('href'):
+                                udemy_link = a_button['href']
                             else:
-                                title = title_elem.get_text(strip=True)
-                            
-                            # Check if it's a Udemy link
-                            if 'udemy.com' in course_url:
-                                self._add_course(title, course_url)
+                                if title_elem and a_title and a_title.has_attr('href'):
+                                    udemy_link = a_title['href']
+                            # Coupon code
+                            coupon_code = None
+                            for p in block.find_all('p'):
+                                if 'Coupon:' in p.get_text():
+                                    text = p.get_text()
+                                    match = re.search(r'Coupon:\s*([A-Z0-9]+)', text)
+                                    if match:
+                                        coupon_code = match.group(1)
+                                    break
+                            # Current price, previous price, rating, category
+                            current_price = "FREE"
+                            previous_price = "Unknown"
+                            rating = "4.5"
+                            category = "Unknown"
+                            for p in block.find_all('p'):
+                                text = p.get_text()
+                                if 'Current Price:' in text:
+                                    match = re.search(r'Current Price:\s*([^\s]+)', text)
+                                    if match:
+                                        current_price = match.group(1)
+                                if 'Previous Price:' in text:
+                                    match = re.search(r'Previous Price:\s*([^\s]+)', text)
+                                    if match:
+                                        previous_price = match.group(1)
+                                if 'Rating:' in text:
+                                    match = re.search(r'Rating:\s*([0-9.]+)', text)
+                                    if match:
+                                        rating = match.group(1)
+                                if 'Category:' in text:
+                                    match = re.search(r'Category:\s*([\w &-]+)', text)
+                                    if match:
+                                        category = match.group(1)
+                           # Image URL
+                            image_url = "Unknown"
+                            figure = block.find('figure')
+                            if figure:
+                                img = figure.find('img')
+                                if img:
+                                    # Check for data-lazy-src first (more likely to be the real image)
+                                    if img.has_attr('data-lazy-src'):
+                                        image_url = img['data-lazy-src']
+                                    elif img.has_attr('src'):
+                                        image_url = img['src']
+
+                            # Other fields
+                            students = "Unknown"
+                            language = "Unknown"
+                            badge = "Unknown"
+                            discount_time_left = "Unknown"
+                            source = "YoFreeSamples"
+                            # Only add if all required fields are present
+                            if title and udemy_link and coupon_code:
+                                course_obj = course.Course(
+                                    id=None,
+                                    title=title,
+                                    link=udemy_link,
+                                    coupon_code=coupon_code,
+                                    date_found=time.strftime("%Y-%m-%d %H:%M:%S"),
+                                    current_price=current_price,
+                                    previous_price=previous_price,
+                                    rating=rating,
+                                    category=category,
+                                    image_url=image_url,
+                                    students=students,
+                                    language=language,
+                                    badge=badge,
+                                    discount_time_left=discount_time_left,
+                                    source=source
+                                )
+                                self.courses.append(course_obj)
+                                self.stats["added"] += 1
                                 self.stats["total_found"] += 1
-                            
+                            else:
+                                print(f"[YoFreeSamples] Skipped block (missing data): title={title}, link={udemy_link}, coupon={coupon_code}")
                         except Exception as e:
-                            print(f"[YoFreeSamples] Error parsing course entry: {e}")
+                            print(f"[YoFreeSamples] Error parsing course block: {e}")
                             self.stats["errors"] += 1
-                            
                 except Exception as e:
                     print(f"[YoFreeSamples] Error parsing page {page}: {e}")
                     self.stats["errors"] += 1
+        print(f"[YoFreeSamples] Total courses found: {self.stats['total_found']}")
 
 
 class StatsScraper:

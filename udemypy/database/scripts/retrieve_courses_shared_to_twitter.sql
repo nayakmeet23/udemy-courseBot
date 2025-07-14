@@ -3,11 +3,10 @@ SELECT c.id,
     c.link,
     c.coupon_code,
     c.date_found,
-    c.discount,
     c.discount_time_left, 
     c.students,
     c.rating,
-    c.lang,
+    c.language,
     c.badge
 FROM
     course AS c,

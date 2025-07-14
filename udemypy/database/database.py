@@ -1,6 +1,5 @@
 from datetime import datetime
-from udemypy.database.connection import DataBase
-from udemypy.database import connection
+from udemypy.database.connection import DataBase, Sqlite3DataBase
 from udemypy.database import settings
 from udemypy.database import script
 from udemypy import course
@@ -9,33 +8,19 @@ import os
 
 
 def connect() -> DataBase:
-    # Force SQLite3 for Render deployment
-    database = "sqlite3"
-    
-    if database == "mysql":
-        try:
-            db = connection.MySqlDataBase(settings.DATABASE_URL)
-        except ImportError:
-            print("[ERROR] MySQL connector not available. Install mysql-connector-python")
-            raise ImportError("MySQL connector not available. Install mysql-connector-python")
-    elif database == "sqlite3":
-        # ✅ Enable SQLite3 support
-        try:
-            # Ensure data directory exists
-            data_dir = os.path.dirname(settings.LOCAL_DATABASE_PATH)
-            if not os.path.exists(data_dir):
-                os.makedirs(data_dir)
-                print(f"[Database] Created data directory: {data_dir}")
-            
-            db_path = settings.LOCAL_DATABASE_PATH
-            db = connection.Sqlite3DataBase(db_path)
-            print(f"[Database] Connected to SQLite: {db_path}")
-        except Exception as e:
-            print(f"[ERROR] SQLite connection failed: {e}")
-            raise ValueError(f"SQLite connection failed: {e}")
-    else:
-        print("[ERROR] Only MySQL and SQLite3 are supported. Set DATABASE=mysql or DATABASE=sqlite3")
-        raise ValueError("Only MySQL and SQLite3 are supported. Set DATABASE=mysql or DATABASE=sqlite3")
+    # Only SQLite3 is supported
+    try:
+        # Ensure data directory exists
+        data_dir = os.path.dirname(settings.LOCAL_DATABASE_PATH)
+        if not os.path.exists(data_dir):
+            os.makedirs(data_dir)
+            print(f"[Database] Created data directory: {data_dir}")
+        db_path = settings.LOCAL_DATABASE_PATH
+        db = Sqlite3DataBase(db_path)
+        print(f"[Database] Connected to SQLite: {db_path}")
+    except Exception as e:
+        print(f"[ERROR] SQLite connection failed: {e}")
+        raise ValueError(f"SQLite connection failed: {e}")
     return db
 
 
@@ -46,12 +31,16 @@ def add_course(
     course_link: str,
     course_coupon: str,
     date_found: str,
-    discount: Optional[int],
-    discount_time_left: Optional[str],
-    students: Optional[str],
-    rating: Optional[str],
-    language: Optional[str],
-    badge: Optional[str],
+    current_price: str,
+    previous_price: str,
+    rating: str,
+    category: str,
+    image_url: str,
+    students: str,
+    language: str,
+    badge: str,
+    discount_time_left: str,
+    source: str,
 ) -> None:
     """Adds a course instance to the database."""
     script_path = script.get_path("add_course.sql")
@@ -60,12 +49,16 @@ def add_course(
         "link_value": course_link,
         "coupon_code_value": course_coupon,
         "date_found_value": date_found,
-        "discount_value": discount,
-        "discount_time_left_value": discount_time_left,
-        "students_value": students,
+        "current_price_value": current_price,
+        "previous_price_value": previous_price,
         "rating_value": rating,
-        "lang_value": language,
+        "category_value": category,
+        "image_url_value": image_url.replace("'", "''") if image_url else "",
+        "students_value": students,
+        "language_value": language,
         "badge_value": badge,
+        "discount_time_left_value": discount_time_left,
+        "source_value": source,
     }
     sql_script = script.read_script(script_path, variables)
     db.execute_script(sql_script, commit=True)

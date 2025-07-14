@@ -24,7 +24,8 @@ def save_scraping_report(courses, scrapers, filename_prefix="scraping_report"):
             'link': course.link,
             'coupon_code': course.coupon_code,
             'date_found': str(course.date_found),
-            'discount': course.discount,
+            'current_price': getattr(course, 'current_price', 'Unknown'),
+            'previous_price': getattr(course, 'previous_price', 'Unknown'),
             'rating': course.rating,
             'students': course.students,
             'language': course.language
