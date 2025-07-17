@@ -136,8 +136,14 @@ def remove_course(db: DataBase, course_id: int) -> None:
     db.execute_script(sql_script, commit=True)
 
 
-def course_exists_by_link(db: DataBase, course_link: str) -> bool:
-    """Check if a course with the given link already exists in the database."""
-    query = f"SELECT COUNT(*) FROM course WHERE link = '{course_link}'"
+# def course_exists_by_link(db: DataBase, course_link: str) -> bool:
+#     """Check if a course with the given link already exists in the database."""
+#     query = f"SELECT COUNT(*) FROM course WHERE link = '{course_link}'"
+#     result = db.execute(query, commit=False)
+#     return result[0][0] > 0 if result else False
+
+
+def course_exists_by_link_and_coupon(db, link, coupon_code):
+    query = f"SELECT COUNT(*) FROM course WHERE link = '{link}' AND coupon_code = '{coupon_code}'"
     result = db.execute(query, commit=False)
     return result[0][0] > 0 if result else False

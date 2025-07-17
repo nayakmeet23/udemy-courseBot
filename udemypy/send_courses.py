@@ -13,9 +13,12 @@ def _get_courses(
         db,
         social_media_name,
     )
-    courses_shared_id = [c.id for c in courses_shared]
-    new_courses = [c for c in courses if c.id not in courses_shared_id]
-    return new_courses
+    # Use (link, coupon_code) as the unique key
+    shared_keys = {(c.link, c.coupon_code) for c in courses_shared}
+    # Count duplicates
+    total_duplicates = sum(1 for c in courses if (c.link, c.coupon_code) in shared_keys)
+    new_courses = [c for c in courses if (c.link, c.coupon_code) not in shared_keys]
+    return new_courses, total_duplicates
 
 
 def send_courses(
@@ -24,9 +27,10 @@ def send_courses(
     social_media_name: str,
     social_media_id: int,
 ) -> None:
-    # Get new courses
-    new_courses = _get_courses(db, social_media_name)
+    # Get new courses and count duplicates
+    new_courses, total_duplicates = _get_courses(db, social_media_name)
     print(f"[-] {len(new_courses)} new courses to share!")
+    print(f"[-] {total_duplicates} duplicate courses detected (already shared)")
     if len(new_courses) == 0:
         return
 
