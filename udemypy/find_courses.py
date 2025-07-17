@@ -8,8 +8,8 @@ def _save_courses(db, courses: list[course.Course]):
     from udemypy.database import database as dbmod
     for course_ in courses:
         try:
-            if dbmod.course_exists_by_link(db, course_.link):
-                print(f'Course "{course_.title}" already exists in the database (by link)')
+            if dbmod.course_exists_by_link_and_coupon(db, course_.link, course_.coupon_code):
+                print(f'Course "{course_.title}" already exists in the database (by link and coupon)')
                 continue
             database.add_course(
                 db,
